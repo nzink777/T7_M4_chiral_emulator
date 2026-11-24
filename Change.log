@@ -53,3 +53,6 @@ Comparing across the 162 runs reveals a very sharp separation of roles among you
  * Test a DC Quincke Mode (f_drive = 0.0) & Higher Conductivity (sigma) Sweep:
    In sweep_params.json, f_drive was fixed at 50.0 Hz and sigma at 0.0015 S/m. Sweeping f_drive: [0.0, 10.0, 50.0], sigma: [0.0015, 0.05, 0.25], and poloidal_gain: [0.3, 1.5, 4.0] will show how much stronger induced_B_torus_nT and poloidal circulation become when you tune ionic doping and compare DC Quincke symmetry-breaking against 50 Hz AC drive.
 
+Edits:
+expand data/sweep_params.json to sweep f_drive, sigma, and poloidal_gain.
+investigate theta_tilt_rad \to poloidal rollover coupling.
