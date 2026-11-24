@@ -1,3 +1,5 @@
+[![Run T7-M4 Chiral Emulator](https://github.com/nzink777/T7_M4_chiral_emulator/actions/workflows/run_emulator.yml/badge.svg)](https://github.com/nzink777/T7_M4_chiral_emulator/actions/workflows/run_emulator.yml)
+https://github.com/nzink777/T7_M4_chiral_emulator/
 # T7_M4_chiral_emulator
 Four Coupled Modules in the Emulator1. Magnetic Cusp Shaper (\mathbf{B}_{\text{static}}); 2. Chiral Gel Rheology &amp; Electrokinetics; 3. Self-Induced Electromagnetic Torus (\mathbf{J}, \mathbf{B}_{\text{ind}}); 4. T_7 \to M_4 Phase-Coupling &amp; \lambda-Diagnostic Layer.
 Step 1 of the workflow, we will build the combined emulator script (t7_m4_chiral_emulator.py) right now—adding full 2D poloidal rollover (v_r, v_z) with Euler-spiral curvature shaping and your 6 \times 6 spatial-imaginary block algebra / \lambda-invariant diagnostics—and set it up so it loads external JSON/YAML parameter files.
