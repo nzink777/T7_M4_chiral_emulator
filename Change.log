@@ -17,4 +17,9 @@ test dozens or hundreds of combinations and rank which parameters move max_spin_
 define candidate lists for selected gel and magnet parameters (for example tau_y, eps_r, gamma_chiral, V_drive, and theta_tilt_rad) and iterate over their Cartesian product.
 Variance & sensitivity ranking: Computing sample variance (np.var(..., ddof=1)) across all runs and grouping variance by each parameter shows which inputs actually shift the output metrics versus which ones barely register.
 Fast filtering: You can filter or rank runs by stability, spin rate, induced magnetic flux, or proximity to target ratios (coherence_metric greater than 1.0 or alpha_harmonic_alignment closer to 1.0).
-update yml
+
+Update yml
+This Workflow Adds
+Triggers on sweep files: Watches sweep_emulator.py and data/sweep_params.json in addition to t7_m4_chiral_emulator.py, data/gel_params.json, and data/magnet_params.json, while excluding output JSONs to avoid commit loops.
+Logs total runs, mean, variance, and max: Prints a compact summary of every metric from data/sweep_summary.json directly in the Actions job log.
+Commits and archives both outputs: Stages and pushes both data/emulation_results.json and data/sweep_summary.json to main and bundles both into the t7-m4-emulation-results artifact.
