@@ -1,11 +1,15 @@
 name: Run T7-M4 Chiral Emulator
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [ main ]
     paths:
       - 't7_m4_chiral_emulator.py'
-      - 'data/*.json'
+      - 'data/gel_params.json'
+      - 'data/magnet_params.json'
       - '.github/workflows/run_emulator.yml'
   workflow_dispatch:
 
@@ -40,6 +44,18 @@ jobs:
               data = json.load(f)
           print(json.dumps(data["metrics"], indent=2))
           '
+
+      - name: Commit emulation results to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/emulation_results.json
+          if git diff --staged --quiet; then
+            echo "No changes in data/emulation_results.json to commit."
+          else
+            git commit -m "Update emulation_results.json from GitHub Actions"
+            git push
+          fi
 
       - name: Upload emulation results artifact
         uses: actions/upload-artifact@v4
