@@ -8,3 +8,5 @@ Models an anti-Helmholtz ring-magnet cusp shaper with an Euler-spiral curvature 
 
 ~2:15 pm
 stabilized rewrite of t7_m4_chiral_emulator.py. It keeps your Yee 6 \times 6 spatial-imaginary block structure (M6_trace_abs at 0.0), poloidal rollover + Euler-spiral curvature shaping, and external JSON parameter loading (--gel, --mag, --out), while removing the numerical runaway via a smaller time step (dt = 1e-4), bounded velocity/field updates, positive damping, and a bounded omega_norm in build_6x6_yee_block().  
+
+updated .github/workflows/run_emulator.yml with a commit-and-push step for data/emulation_results.json after the emulator runs.
