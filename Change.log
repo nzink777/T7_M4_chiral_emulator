@@ -1,0 +1,2 @@
+yee_curl_triad() replaces the separate Laplacian diffusion passes with a staggered cylindrical curl-leapfrog step linking the spatial triad \mathbf{\Psi}_R = (v_r, v_\phi, v_z) and the imaginary rotational triad \mathbf{\Psi}_I = (w_r, w_phi, w_z).
+The metrics output now directly reports M6_gauge_invariant_TrM2 (\text{Tr}(\mathbf{M}_6^2)), yee_3iI_to_3R_ratio, and alpha_harmonic_alignment alongside lambda_m4
