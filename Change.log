@@ -59,3 +59,25 @@ Expanded data/sweep_params.json (Compact 432-Run Grid)
 To keep GitHub Actions execution fast (around 1–2 minutes) while sweeping all eight variables together, use 2–3 values per parameter (3 \times 2 \times 2 \times 2 \times 2 \times 2 \times 3 \times 2 = 432 runs)
 
 investigate theta_tilt_rad \to poloidal rollover coupling.
+In real-world physics, a tilt angle (\theta_{\text{tilt}}) driving a poloidal rollover (a closed meridional recirculation loop in the (r, z) plane superimposed on azimuthal spin around the z-axis) is not a single universal equation—it appears as gyroscopic precession torque, baroclinic / centrifugal misalignment, or helical/poloidal force coupling depending on which physical system you are modeling.
+In your cnc_batio3_fe3o4_left_chiral_gel + anti-Helmholtz magnetic cusp setup, three real-world mechanisms map directly onto \theta_{\text{tilt}} \to \text{poloidal rollover}:
+1. Gyroscopic & Precessional Torque (\boldsymbol{\tau}_{\text{prec}} = \boldsymbol{\Omega}_p \times \mathbf{L})
+When a rotating fluid core or magnetized/polarized medium has angular momentum \mathbf{L} tilted by an angle \theta relative to a precession or symmetry axis, tilting the axis induces a precessional torque orthogonal to both \boldsymbol{\Omega}_p and \mathbf{L}:
+ * That cross-product redirects part of the pure azimuthal swirl (v_\phi) into meridional (poloidal) motion (v_r, v_z)—inward along one region of the core and outward/axial along the return path.
+ * In a pinched or cusped geometry, an axial/radial gradient in tilt or field curvature turns that transverse torque into a closed figure-eight / toroidal-poloidal circulation cell.
+2. Misaligned Magnetic Cusp & Baroclinic / Kelvin-Force Vorticity
+In a ferro-hydrogel (Fe3O4 + BaTiO3 + CNC) inside a magnetic field whose symmetry or tilt angle \theta_{\text{tilt}} is angled relative to the pressure/density or electric-field gradient:
+ * The Kelvin magnetization force density is:
+   
+ * When the field/tilt direction is inclined at angle \theta_{\text{tilt}} rather than purely aligned with or perpendicular to the flow axis, (\mathbf{M} \cdot \nabla)\mathbf{H} acquires a non-zero meridional component in the (r, z) plane.
+ * Taking the curl of body forces shows that misalignment between gradients generates vorticity (\frac{\partial \boldsymbol{\omega}}{\partial t} \sim \nabla \rho \times \nabla p in baroclinic fluids, or analogous field-gradient torque in magneto-dielectric media), driving poloidal rollover whenever the tilt is non-zero (\sin\theta_{\text{tilt}} \neq 0).
+3. Helical Pitch / Chiral Streamline Coupling
+In a left-chiral medium (gamma_chiral < 0) confined along a curved/cusped profile (euler_kappa), a tilt angle \theta_{\text{tilt}} sets the pitch angle between the primary rotational axis and the meridional plane:
+ * Pure azimuthal flow has zero poloidal component; introducing a non-zero pitch/tilt angle projects a fraction \propto \sin\theta_{\text{tilt}} (or \sin(2\theta_{\text{tilt}}) depending on tensor symmetry) of the rotational/dielectric stress into the (r, z) rollover plane.
+ * That is why adding a direct tilt-modulated term into v_r and v_z in t7_m4_chiral_emulator.py makes theta_tilt_rad physically stir the poloidal loop rather than only shifting M6_gauge_invariant_TrM2 and coherence_metric.
+How to Express It Cleanly in t7_m4_chiral_emulator.py
+If you want the emulator's peak_poloidal_speed_mm_s to reflect real tilt-driven rollover without causing the v_phi**2 / R blow-up you saw earlier, you can add a bounded tilt-coupling term proportional to np.sin(mag.theta_tilt_rad) acting on v_phi and euler_kappa:
+ * Axial rollover (v_z): combines Euler-spiral curvature (euler_kappa), azimuthal spin (v_phi), and np.sin(mag.theta_tilt_rad) so increasing theta_tilt_rad from 0.22 to 0.45 visibly increases peak_poloidal_speed_mm_s.
+ * Radial return (v_r): couples np.sin(mag.theta_tilt_rad) with z_norm and v_phi so fluid moves inward near the waist and outward toward the lobes (or vice versa depending on sign) in a closed poloidal loop.
+Would you like to drop that theta_tilt_rad poloidal coupling block into t7_m4_chiral_emulator.py before your next 432-run sweep, or keep the current emulator frozen so your f_drive, sigma, and poloidal_gain results stay directly comparable to the 162-run sweep?
+
