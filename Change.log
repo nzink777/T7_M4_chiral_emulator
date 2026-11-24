@@ -17,3 +17,4 @@ test dozens or hundreds of combinations and rank which parameters move max_spin_
 define candidate lists for selected gel and magnet parameters (for example tau_y, eps_r, gamma_chiral, V_drive, and theta_tilt_rad) and iterate over their Cartesian product.
 Variance & sensitivity ranking: Computing sample variance (np.var(..., ddof=1)) across all runs and grouping variance by each parameter shows which inputs actually shift the output metrics versus which ones barely register.
 Fast filtering: You can filter or rank runs by stability, spin rate, induced magnetic flux, or proximity to target ratios (coherence_metric greater than 1.0 or alpha_harmonic_alignment closer to 1.0).
+update yml
