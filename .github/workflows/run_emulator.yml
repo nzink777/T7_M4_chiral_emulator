@@ -1,0 +1,64 @@
+name: Run T7-M4 Chiral Emulator
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 't7_m4_chiral_emulator.py'
+      - 'data/gel_params.json'
+      - 'data/magnet_params.json'
+      - '.github/workflows/run_emulator.yml'
+  workflow_dispatch:
+
+jobs:
+  emulate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install NumPy
+        run: pip install --no-cache-dir numpy
+
+      - name: Run T7-M4 Yee 6x6 chiral emulator
+        run: |
+          python3 t7_m4_chiral_emulator.py \
+            --gel data/gel_params.json \
+            --mag data/magnet_params.json \
+            --out data/emulation_results.json
+
+      - name: Print emulation metrics summary
+        run: |
+          python3 -c '
+          import json
+          with open("data/emulation_results.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+          print(json.dumps(data["metrics"], indent=2))
+          '
+
+      - name: Commit emulation results to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/emulation_results.json
+          if git diff --staged --quiet; then
+            echo "No changes in data/emulation_results.json to commit."
+          else
+            git commit -m "Update emulation_results.json from GitHub Actions"
+            git push
+          fi
+
+      - name: Upload emulation results artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: t7-m4-emulation-results
+          path: data/emulation_results.json
