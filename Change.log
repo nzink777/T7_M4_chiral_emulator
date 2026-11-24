@@ -55,4 +55,7 @@ Comparing across the 162 runs reveals a very sharp separation of roles among you
 
 Edits:
 expand data/sweep_params.json to sweep f_drive, sigma, and poloidal_gain.
+Expanded data/sweep_params.json (Compact 432-Run Grid)
+To keep GitHub Actions execution fast (around 1–2 minutes) while sweeping all eight variables together, use 2–3 values per parameter (3 \times 2 \times 2 \times 2 \times 2 \times 2 \times 3 \times 2 = 432 runs)
+
 investigate theta_tilt_rad \to poloidal rollover coupling.
