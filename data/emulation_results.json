@@ -1,0 +1,38 @@
+{
+  "gel": {
+    "name": "cnc_batio3_fe3o4_left_chiral_gel",
+    "rho": 1015.0,
+    "tau_y": 0.04,
+    "K_visc": 0.075,
+    "n_flow": 0.52,
+    "eps_r": 145.0,
+    "sigma": 0.0015,
+    "chi_mag": 0.00014,
+    "gamma_chiral": -0.35,
+    "poloidal_gain": 0.3
+  },
+  "magnet": {
+    "name": "anti_helmholtz_euler_cusp_low_v",
+    "R_cell": 0.025,
+    "H_cell": 0.08,
+    "B_ring": 0.18,
+    "z_sep": 0.045,
+    "euler_pitch": 1.25,
+    "theta_tilt_rad": 0.22,
+    "omega_7_scale": 1.0,
+    "V_drive": 12.0,
+    "f_drive": 50.0
+  },
+  "metrics": {
+    "max_spin_rpm": 6.657785754426171,
+    "peak_poloidal_speed_mm_s": 0.00020229508013826453,
+    "induced_B_torus_nT": 0.0013145875736599658,
+    "M6_trace_abs": 0.0,
+    "M6_gauge_invariant_TrM2": 0.10431873646522646,
+    "yee_3iI_to_3R_ratio": 19.52302636696911,
+    "alpha_inv_ref": 137.035999084,
+    "alpha_harmonic_alignment": 0.14246640661919743,
+    "coherence_metric": 0.2847474663605036,
+    "lambda_m4": 1.0
+  }
+}
