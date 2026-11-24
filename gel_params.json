@@ -1,0 +1,12 @@
+{
+  "name": "cnc_batio3_fe3o4_left_chiral_gel",
+  "rho": 1015.0,
+  "tau_y": 0.04,
+  "K_visc": 0.075,
+  "n_flow": 0.52,
+  "eps_r": 145.0,
+  "sigma": 1.5e-3,
+  "chi_mag": 1.4e-4,
+  "gamma_chiral": -0.35,
+  "poloidal_gain": 0.30
+}
