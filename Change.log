@@ -10,3 +10,10 @@ Models an anti-Helmholtz ring-magnet cusp shaper with an Euler-spiral curvature 
 stabilized rewrite of t7_m4_chiral_emulator.py. It keeps your Yee 6 \times 6 spatial-imaginary block structure (M6_trace_abs at 0.0), poloidal rollover + Euler-spiral curvature shaping, and external JSON parameter loading (--gel, --mag, --out), while removing the numerical runaway via a smaller time step (dt = 1e-4), bounded velocity/field updates, positive damping, and a bounded omega_norm in build_6x6_yee_block().  
 
 updated .github/workflows/run_emulator.yml with a commit-and-push step for data/emulation_results.json after the emulator runs.
+
+~2:34 pm
+add a companion script sweep_emulator.py that imports GelParams, MagnetParams, and run_emulation from t7_m4_chiral_emulator.py, reads a data/sweep_params.json grid, records every combination, and computes mean, variance, min, and max for each metric.
+test dozens or hundreds of combinations and rank which parameters move max_spin_rpm, peak_poloidal_speed_mm_s, induced_B_torus_nT, coherence_metric, and yee_3iI_to_3R_ratio the most.
+define candidate lists for selected gel and magnet parameters (for example tau_y, eps_r, gamma_chiral, V_drive, and theta_tilt_rad) and iterate over their Cartesian product.
+Variance & sensitivity ranking: Computing sample variance (np.var(..., ddof=1)) across all runs and grouping variance by each parameter shows which inputs actually shift the output metrics versus which ones barely register.
+Fast filtering: You can filter or rank runs by stability, spin rate, induced magnetic flux, or proximity to target ratios (coherence_metric greater than 1.0 or alpha_harmonic_alignment closer to 1.0).
