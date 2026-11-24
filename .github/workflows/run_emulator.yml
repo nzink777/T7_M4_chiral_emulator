@@ -57,7 +57,7 @@ jobs:
           for k, v in sweep["summary_stats"].items():
               print(f"{k}: mean={v['mean']:.6g}, var={v['variance']:.6g}, max={v['max']:.6g}")
           EOF
-
+          
       - name: Commit emulation and sweep results to main
         run: |
           git config user.name "github-actions[bot]"
@@ -65,11 +65,22 @@ jobs:
           git add data/emulation_results.json data/sweep_summary.json
           if git diff --staged --quiet; then
             echo "No changes in output JSON files to commit."
-          else
-            git commit -m "Update emulation_results.json and sweep_summary.json from GitHub Actions"
-            git push
+            exit 0
           fi
-
+          git commit -m "Update emulation_results.json and sweep_summary.json from GitHub Actions"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push rejected on attempt $attempt; fetching and taking latest generated JSONs..."
+            git fetch origin main
+            git checkout --theirs -- data/emulation_results.json data/sweep_summary.json 2>/dev/null || true
+            git reset --soft origin/main
+            git add data/emulation_results.json data/sweep_summary.json
+            git commit -m "Update emulation_results.json and sweep_summary.json from GitHub Actions" --allow-empty
+          done
+          git push origin HEAD:main
+          
       - name: Upload emulation and sweep artifacts
         uses: actions/upload-artifact@v4
         with:
