@@ -23,3 +23,33 @@ This Workflow Adds
 Triggers on sweep files: Watches sweep_emulator.py and data/sweep_params.json in addition to t7_m4_chiral_emulator.py, data/gel_params.json, and data/magnet_params.json, while excluding output JSONs to avoid commit loops.
 Logs total runs, mean, variance, and max: Prints a compact summary of every metric from data/sweep_summary.json directly in the Actions job log.
 Commits and archives both outputs: Stages and pushes both data/emulation_results.json and data/sweep_summary.json to main and bundles both into the t7-m4-emulation-results artifact.
+
+analysis 
+All 162 parameter permutations executed cleanly with exact trace-free preservation (M6_trace_abs = 0.0 across every run), and Run #42 crossed the coherence threshold with coherence_metric = 20.873 and lambda_m4 = 1.1987.
+1. Summary of the 162-Run Sweep (sweep_summary.json)
+| Metric | Mean | Variance | Min | Max |
+|---|---|---|---|---|
+| max_spin_rpm | 16.22 | 225.24 | 1.57 | 57.74 |
+| peak_poloidal_speed_mm_s | 0.00118 | 3.32e-6 | 3.00e-5 | 0.00727 |
+| induced_B_torus_nT | 0.00576 | 3.96e-5 | 3.11e-4 | 0.02280 |
+| M6_gauge_invariant_TrM2 | 0.2242 | 0.0451 | 0.0465 | 0.5216 |
+| yee_3iI_to_3R_ratio | 19.36 | 15.30 | 14.50 | 24.05 |
+| alpha_harmonic_alignment | 0.1413 | 8.15e-4 | 0.1058 | 0.1755 |
+| coherence_metric | 1.656 | 7.76 | 0.0246 | 20.87 |
+| lambda_m4 | 1.0103 | 6.84e-4 | 1.0000 | 1.1987 |
+2. What Actually Drove the Variance (Parameter Sensitivity)
+Comparing across the 162 runs reveals a very sharp separation of roles among your five swept variables:
+ * Yield Stress / Stiction (tau_y) — Primary Gatekeeper for lambda_m4:
+   Every single one of the Top 5 runs (#42, #48, #24, #40, #30) sits at the lowest yield stress (tau_y = 0.01 Pa). Look at Run #42 vs. Run #150: both have identical eps_r = 220, gamma_chiral = -0.5, theta_tilt_rad = 0.45, and V_drive = 24 V, and both spin at ~57.7 RPM, yet raising tau_y from 0.01 to 0.08 drops coherence_metric from 20.87 down to 2.63 (lambda_m4 drops from 1.199 to 1.016) because gamma_loss = tau_y / K_visc scales linearly with tau_y.
+ * Drive Voltage (V_drive) — Largest Driver of Spin & Induced Torus (max_spin_rpm variance = 225.24):
+   Doubling V_drive from 12 V to 24 V quadruples azimuthal spin (tau_phi scales as E^2, e.g., Run #41 at 14.43 RPM vs. Run #42 at 57.74 RPM) and increases induced_B_torus_nT by 8\times (0.00285 nT \to 0.0228 nT) and poloidal speed by 11.7\times.
+ * Precession Tilt (theta_tilt_rad) — Pure Topological / Gauge Lever:
+   Compare Run #40 (theta_tilt_rad = 0.22) with Run #42 (theta_tilt_rad = 0.45). Their fluid spin (57.74 RPM), poloidal speed (0.00727 mm/s), and induced magnetic torus (0.0228 nT) are identical to 15 decimal places, yet M6_gauge_invariant_TrM2 jumps 5\times (0.1042 \to 0.5215) and coherence_metric doubles (10.47 \to 20.87). In the current code, theta_tilt_rad enters the 6 \times 6 block and coherence_metric cleanly without feeding back into the fluid momentum equation yet.
+ * Permittivity (eps_r) & Left Chirality (gamma_chiral) — Linear Spin & Ratio Multipliers:
+   eps_r is the sole driver of yee_3iI_to_3R_ratio (14.50 at eps_r = 80 \to 19.52 at eps_r = 145 \to 24.05 at eps_r = 220), while stronger left-handed chirality (gamma_chiral = -0.5 vs. -0.15) scales max_spin_rpm proportionally by 3.33\times.
+3. Two High-Leverage Improvements for the Next Iteration
+ * Couple Poloidal Rollover & theta_tilt_rad Directly in t7_m4_chiral_emulator.py:
+   Right now peak_poloidal_speed_mm_s is very small (0.0073 mm/s max) because pol_drive is heavily damped relative to v_phi, and theta_tilt_rad does not yet modulate the magnetic-cusp poloidal tilt in the fluid loop. Adding a direct tilt-induced poloidal coupling term (sin(theta_tilt_rad) * euler_kappa * v_phi) will let the precession tilt physically drive the figure-eight tornado rollover rather than only updating the 6 \times 6 matrix.
+ * Test a DC Quincke Mode (f_drive = 0.0) & Higher Conductivity (sigma) Sweep:
+   In sweep_params.json, f_drive was fixed at 50.0 Hz and sigma at 0.0015 S/m. Sweeping f_drive: [0.0, 10.0, 50.0], sigma: [0.0015, 0.05, 0.25], and poloidal_gain: [0.3, 1.5, 4.0] will show how much stronger induced_B_torus_nT and poloidal circulation become when you tune ionic doping and compare DC Quincke symmetry-breaking against 50 Hz AC drive.
+
