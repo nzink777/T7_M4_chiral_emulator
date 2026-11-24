@@ -1,0 +1,48 @@
+name: Run T7-M4 Chiral Emulator
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'code/t7_m4_chiral_emulator.py'
+      - 'code/data/*.json'
+      - '.github/workflows/run_emulator.yml'
+  workflow_dispatch:
+
+jobs:
+  emulate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install NumPy
+        run: pip install --no-cache-dir numpy
+
+      - name: Run T7-M4 Yee 6x6 chiral emulator
+        run: |
+          python3 code/t7_m4_chiral_emulator.py \
+            --gel code/data/gel_params.json \
+            --mag code/data/magnet_params.json \
+            --out code/data/emulation_results.json
+
+      - name: Print emulation metrics summary
+        run: |
+          python3 -c '
+          import json
+          with open("code/data/emulation_results.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+          print(json.dumps(data["metrics"], indent=2))
+          '
+
+      - name: Upload emulation results artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: t7-m4-emulation-results
+          path: code/data/emulation_results.json
