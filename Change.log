@@ -5,3 +5,6 @@ data/gel_params.json
 Models a shear-thinning cellulose nanocrystal (CNC) + trace \text{BaTiO}_3 + \text{Fe}_3\text{O}_4 aqueous hydrogel with low internal yield stress ("stiction"), high dielectric permittivity, and negative (-0.35) left-handed chiral coupling.
 data/magnet_params.json
 Models an anti-Helmholtz ring-magnet cusp shaper with an Euler-spiral curvature weight (euler_pitch), non-zero F_8 precession tilt (theta_tilt_rad), and low-voltage drive (V_drive).
+
+~2:15 pm
+stabilized rewrite of t7_m4_chiral_emulator.py. It keeps your Yee 6 \times 6 spatial-imaginary block structure (M6_trace_abs at 0.0), poloidal rollover + Euler-spiral curvature shaping, and external JSON parameter loading (--gel, --mag, --out), while removing the numerical runaway via a smaller time step (dt = 1e-4), bounded velocity/field updates, positive damping, and a bounded omega_norm in build_6x6_yee_block().  
