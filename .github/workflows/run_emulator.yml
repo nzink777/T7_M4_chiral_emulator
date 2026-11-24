@@ -4,8 +4,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'code/t7_m4_chiral_emulator.py'
-      - 'code/data/*.json'
+      - 't7_m4_chiral_emulator.py'
+      - 'data/*.json'
       - '.github/workflows/run_emulator.yml'
   workflow_dispatch:
 
@@ -27,16 +27,16 @@ jobs:
 
       - name: Run T7-M4 Yee 6x6 chiral emulator
         run: |
-          python3 code/t7_m4_chiral_emulator.py \
-            --gel code/data/gel_params.json \
-            --mag code/data/magnet_params.json \
-            --out code/data/emulation_results.json
+          python3 t7_m4_chiral_emulator.py \
+            --gel data/gel_params.json \
+            --mag data/magnet_params.json \
+            --out data/emulation_results.json
 
       - name: Print emulation metrics summary
         run: |
           python3 -c '
           import json
-          with open("code/data/emulation_results.json", "r", encoding="utf-8") as f:
+          with open("data/emulation_results.json", "r", encoding="utf-8") as f:
               data = json.load(f)
           print(json.dumps(data["metrics"], indent=2))
           '
@@ -45,4 +45,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: t7-m4-emulation-results
-          path: code/data/emulation_results.json
+          path: data/emulation_results.json
