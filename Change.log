@@ -1,2 +1,7 @@
 yee_curl_triad() replaces the separate Laplacian diffusion passes with a staggered cylindrical curl-leapfrog step linking the spatial triad \mathbf{\Psi}_R = (v_r, v_\phi, v_z) and the imaginary rotational triad \mathbf{\Psi}_I = (w_r, w_phi, w_z).
 The metrics output now directly reports M6_gauge_invariant_TrM2 (\text{Tr}(\mathbf{M}_6^2)), yee_3iI_to_3R_ratio, and alpha_harmonic_alignment alongside lambda_m4
+DATA
+data/gel_params.json
+Models a shear-thinning cellulose nanocrystal (CNC) + trace \text{BaTiO}_3 + \text{Fe}_3\text{O}_4 aqueous hydrogel with low internal yield stress ("stiction"), high dielectric permittivity, and negative (-0.35) left-handed chiral coupling.
+data/magnet_params.json
+Models an anti-Helmholtz ring-magnet cusp shaper with an Euler-spiral curvature weight (euler_pitch), non-zero F_8 precession tilt (theta_tilt_rad), and low-voltage drive (V_drive).
