@@ -2,22 +2,22 @@
   "total_runs": 12,
   "summary_stats": {
     "max_spin_rpm": {
-      "mean": 443.1908908359869,
-      "variance": 212220.47701911087,
-      "min": 16.410722362572532,
-      "max": 1050.6596924279438
+      "mean": 74.25411729554156,
+      "variance": 10029.743654893042,
+      "min": 1.1130157687033726,
+      "max": 302.1933934463667
     },
     "peak_poloidal_speed_mm_s": {
-      "mean": 5.399721472802715,
-      "variance": 52.785771014139776,
-      "min": 0.005455274310535124,
-      "max": 15.224644454157666
+      "mean": 0.16803263208160849,
+      "variance": 0.03644108051785967,
+      "min": 0.02913551715102376,
+      "max": 0.6411243135314841
     },
     "induced_B_torus_nT": {
-      "mean": 41599.09385934579,
-      "variance": 2641189091.188233,
-      "min": 216.2460611576069,
-      "max": 110755.11556029938
+      "mean": 560983.5915475698,
+      "variance": 788406313225.8071,
+      "min": 905.6607988572337,
+      "max": 2692816.669838422
     },
     "M6_trace_abs": {
       "mean": 0.0,
@@ -26,16 +26,16 @@
       "max": 0.0
     },
     "M6_gauge_invariant_TrM2": {
-      "mean": 0.5079830002254231,
-      "variance": 0.0003350891757912313,
-      "min": 0.4832270917173658,
-      "max": 0.5215596092380814
+      "mean": 0.5214999999999999,
+      "variance": 1.3446492702630882e-32,
+      "min": 0.5215,
+      "max": 0.5215
     },
     "yee_3iI_to_3R_ratio": {
-      "mean": 23.9892314416759,
-      "variance": 0.0075337036901940565,
-      "min": 23.871730360540948,
-      "max": 24.05498210154746
+      "mean": 24.05,
+      "variance": 0.0,
+      "min": 24.05,
+      "max": 24.05
     },
     "alpha_inv_ref": {
       "mean": 137.035999084,
@@ -44,64 +44,25 @@
       "max": 137.035999084
     },
     "alpha_harmonic_alignment": {
-      "mean": 0.17505787969605743,
-      "variance": 4.011799260584179e-07,
-      "min": 0.1742004328797436,
-      "max": 0.1755376854428032
+      "mean": 0.1755,
+      "variance": 0.0,
+      "min": 0.1755,
+      "max": 0.1755
     },
     "coherence_metric": {
-      "mean": 44.407557919981485,
-      "variance": 1798.8977365113997,
-      "min": 0.7467763719077636,
-      "max": 100.0
+      "mean": 1.7252571170548483,
+      "variance": 3.72529074430073,
+      "min": 0.24390796496421904,
+      "max": 6.641619435313801
     },
     "lambda_m4": {
-      "mean": 1.4342865988898916,
-      "variance": 0.17968929088451072,
-      "min": 1.0,
-      "max": 1.99
+      "mean": 1.0170800454588431,
+      "variance": 0.00036511574584891426,
+      "min": 1.0024146888531458,
+      "max": 1.0657520324096066
     }
   },
   "top_5_by_coherence": [
-    {
-      "run_id": 3,
-      "gel": {
-        "name": "cnc_batio3_fe3o4_chiral_gel",
-        "rho": 1015.0,
-        "tau_y": 0.01,
-        "K_visc": 0.04,
-        "n_flow": 0.55,
-        "eps_r": 220.0,
-        "sigma": 100.0,
-        "chi_mag": 0.00012,
-        "gamma_chiral": -0.5,
-        "poloidal_gain": 2.0
-      },
-      "magnet": {
-        "name": "anti_helmholtz_euler_cusp",
-        "R_cell": 0.025,
-        "H_cell": 0.08,
-        "B_ring": 0.18,
-        "z_sep": 0.045,
-        "euler_pitch": 1.25,
-        "theta_tilt_rad": 0.45,
-        "omega_7_scale": 1.0,
-        "V_drive": 96.0,
-        "f_drive": 0.0
-      },
-      "metrics": {
-        "max_spin_rpm": 1050.6596924279438,
-        "peak_poloidal_speed_mm_s": 15.224644454157666,
-        "induced_B_torus_nT": 110755.11556029938,
-        "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.4832270917173658,
-        "yee_3iI_to_3R_ratio": 23.872130829884227,
-        "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.17420335524573471,
-        "coherence_metric": 100.0,
-        "lambda_m4": 1.99
-      }
-    },
     {
       "run_id": 6,
       "gel": {
@@ -129,25 +90,25 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1050.6332711574958,
-        "peak_poloidal_speed_mm_s": 15.223911378515929,
-        "induced_B_torus_nT": 110751.9103182244,
+        "max_spin_rpm": 302.1933934463667,
+        "peak_poloidal_speed_mm_s": 0.6411243135314841,
+        "induced_B_torus_nT": 2692816.669838422,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.48322900281484016,
-        "yee_3iI_to_3R_ratio": 23.872148421146537,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.17420348361537794,
-        "coherence_metric": 100.0,
-        "lambda_m4": 1.99
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 6.641619435313801,
+        "lambda_m4": 1.0657520324096066
       }
     },
     {
-      "run_id": 12,
+      "run_id": 3,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
-        "tau_y": 0.04,
-        "K_visc": 0.08,
+        "tau_y": 0.01,
+        "K_visc": 0.04,
         "n_flow": 0.55,
         "eps_r": 220.0,
         "sigma": 100.0,
@@ -168,16 +129,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1050.405350810129,
-        "peak_poloidal_speed_mm_s": 15.217833342535771,
-        "induced_B_torus_nT": 110722.36616668655,
+        "max_spin_rpm": 227.50740060863683,
+        "peak_poloidal_speed_mm_s": 0.4308608511847591,
+        "induced_B_torus_nT": 1880001.6109333702,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.48324548677496343,
-        "yee_3iI_to_3R_ratio": 23.871747966379587,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.17420056135575543,
-        "coherence_metric": 95.49984420924075,
-        "lambda_m4": 1.9449984420924076
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 4.05018032877146,
+        "lambda_m4": 1.0400967852548375
       }
     },
     {
@@ -207,25 +168,25 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 262.65480751289783,
-        "peak_poloidal_speed_mm_s": 0.9726790958935507,
-        "induced_B_torus_nT": 13843.940117644532,
+        "max_spin_rpm": 47.58212577784323,
+        "peak_poloidal_speed_mm_s": 0.20659873742162074,
+        "induced_B_torus_nT": 177432.24568221695,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.519152589482869,
-        "yee_3iI_to_3R_ratio": 24.041349762966735,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.1754382054618358,
-        "coherence_metric": 94.95072229754581,
-        "lambda_m4": 1.939507222975458
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 2.728024349439731,
+        "lambda_m4": 1.0270074410594534
       }
     },
     {
-      "run_id": 9,
+      "run_id": 12,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
         "tau_y": 0.04,
-        "K_visc": 0.04,
+        "K_visc": 0.08,
         "n_flow": 0.55,
         "eps_r": 220.0,
         "sigma": 100.0,
@@ -246,16 +207,55 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1050.4317656345818,
-        "peak_poloidal_speed_mm_s": 15.218566121060567,
-        "induced_B_torus_nT": 110725.5703843226,
+        "max_spin_rpm": 148.00517228384933,
+        "peak_poloidal_speed_mm_s": 0.23601029361974207,
+        "induced_B_torus_nT": 1121034.5983285604,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.4832435765433613,
-        "yee_3iI_to_3R_ratio": 23.871730360540948,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.1742004328797436,
-        "coherence_metric": 47.79882630415499,
-        "lambda_m4": 1.46798826304155
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 1.8929760714559005,
+        "lambda_m4": 1.0187404631074135
+      }
+    },
+    {
+      "run_id": 2,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.04,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 48.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 36.65150600908543,
+        "peak_poloidal_speed_mm_s": 0.1433622605800007,
+        "induced_B_torus_nT": 131760.90507637907,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 1.7060029528311675,
+        "lambda_m4": 1.0168894292330286
       }
     }
   ],
@@ -287,16 +287,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 16.416043786159676,
-        "peak_poloidal_speed_mm_s": 0.005458179761691391,
-        "induced_B_torus_nT": 216.31621464017712,
+        "max_spin_rpm": 1.5379041154968884,
+        "peak_poloidal_speed_mm_s": 0.03109805524530046,
+        "induced_B_torus_nT": 1267.4138955387284,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.5215596031158842,
-        "yee_3iI_to_3R_ratio": 24.053501629522632,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.1755268819164691,
-        "coherence_metric": 2.9790530970256572,
-        "lambda_m4": 1.0197905309702566
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 0.5134521093131553,
+        "lambda_m4": 1.0050831758822003
       }
     },
     {
@@ -326,16 +326,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 262.66210277632825,
-        "peak_poloidal_speed_mm_s": 0.9727327885804936,
-        "induced_B_torus_nT": 13844.35190027459,
+        "max_spin_rpm": 36.65150600908543,
+        "peak_poloidal_speed_mm_s": 0.1433622605800007,
+        "induced_B_torus_nT": 131760.90507637907,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.5191524553218815,
-        "yee_3iI_to_3R_ratio": 24.0412642171867,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.1754375812041181,
-        "coherence_metric": 47.665829900307806,
-        "lambda_m4": 1.466658299003078
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 1.7060029528311675,
+        "lambda_m4": 1.0168894292330286
       }
     },
     {
@@ -365,16 +365,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1050.6596924279438,
-        "peak_poloidal_speed_mm_s": 15.224644454157666,
-        "induced_B_torus_nT": 110755.11556029938,
+        "max_spin_rpm": 227.50740060863683,
+        "peak_poloidal_speed_mm_s": 0.4308608511847591,
+        "induced_B_torus_nT": 1880001.6109333702,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.4832270917173658,
-        "yee_3iI_to_3R_ratio": 23.872130829884227,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.17420335524573471,
-        "coherence_metric": 100.0,
-        "lambda_m4": 1.99
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 4.05018032877146,
+        "lambda_m4": 1.0400967852548375
       }
     },
     {
@@ -404,16 +404,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 16.415534080130953,
-        "peak_poloidal_speed_mm_s": 0.005457901436206465,
-        "induced_B_torus_nT": 216.3094950488163,
+        "max_spin_rpm": 1.802984953883977,
+        "peak_poloidal_speed_mm_s": 0.03885270060378543,
+        "induced_B_torus_nT": 1497.5901202406626,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.5215596037023773,
-        "yee_3iI_to_3R_ratio": 24.053643406884593,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.17552791651586563,
-        "coherence_metric": 5.934278654815309,
-        "lambda_m4": 1.049342786548153
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 0.7339226925325282,
+        "lambda_m4": 1.0072658346560721
       }
     },
     {
@@ -443,16 +443,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 262.65480751289783,
-        "peak_poloidal_speed_mm_s": 0.9726790958935507,
-        "induced_B_torus_nT": 13843.940117644532,
+        "max_spin_rpm": 47.58212577784323,
+        "peak_poloidal_speed_mm_s": 0.20659873742162074,
+        "induced_B_torus_nT": 177432.24568221695,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.519152589482869,
-        "yee_3iI_to_3R_ratio": 24.041349762966735,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.1754382054618358,
-        "coherence_metric": 94.95072229754581,
-        "lambda_m4": 1.939507222975458
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 2.728024349439731,
+        "lambda_m4": 1.0270074410594534
       }
     },
     {
@@ -482,16 +482,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1050.6332711574958,
-        "peak_poloidal_speed_mm_s": 15.223911378515929,
-        "induced_B_torus_nT": 110751.9103182244,
+        "max_spin_rpm": 302.1933934463667,
+        "peak_poloidal_speed_mm_s": 0.6411243135314841,
+        "induced_B_torus_nT": 2692816.669838422,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.48322900281484016,
-        "yee_3iI_to_3R_ratio": 23.872148421146537,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.17420348361537794,
-        "coherence_metric": 100.0,
-        "lambda_m4": 1.99
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 6.641619435313801,
+        "lambda_m4": 1.0657520324096066
       }
     },
     {
@@ -521,16 +521,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 16.411231896902677,
-        "peak_poloidal_speed_mm_s": 0.0054555524814610375,
-        "induced_B_torus_nT": 216.25277843320785,
+        "max_spin_rpm": 1.1130157687033726,
+        "peak_poloidal_speed_mm_s": 0.02913551715102376,
+        "induced_B_torus_nT": 905.6607988572337,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.5215596086519577,
-        "yee_3iI_to_3R_ratio": 24.054840316287674,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.17553665078577343,
-        "coherence_metric": 0.7467763719077636,
-        "lambda_m4": 1.0
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 0.24390796496421904,
+        "lambda_m4": 1.0024146888531458
       }
     },
     {
@@ -560,16 +560,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 262.5987305387598,
-        "peak_poloidal_speed_mm_s": 0.9722586259194519,
-        "induced_B_torus_nT": 13840.579484962014,
+        "max_spin_rpm": 14.733419046866581,
+        "peak_poloidal_speed_mm_s": 0.040024991084794674,
+        "induced_B_torus_nT": 49007.22864866653,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.519153620622697,
-        "yee_3iI_to_3R_ratio": 24.041676355102393,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.17544058871979606,
-        "coherence_metric": 11.949287444797505,
-        "lambda_m4": 1.109492874447975
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 0.3130276286683107,
+        "lambda_m4": 1.0030989735238163
       }
     },
     {
@@ -599,16 +599,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1050.4317656345818,
-        "peak_poloidal_speed_mm_s": 15.218566121060567,
-        "induced_B_torus_nT": 110725.5703843226,
+        "max_spin_rpm": 84.03688378500293,
+        "peak_poloidal_speed_mm_s": 0.10685656539974887,
+        "induced_B_torus_nT": 589919.7090070035,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.4832435765433613,
-        "yee_3iI_to_3R_ratio": 23.871730360540948,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.1742004328797436,
-        "coherence_metric": 47.79882630415499,
-        "lambda_m4": 1.46798826304155
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 0.6771208966667679,
+        "lambda_m4": 1.006703496877001
       }
     },
     {
@@ -638,16 +638,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 16.410722362572532,
-        "peak_poloidal_speed_mm_s": 0.005455274310535124,
-        "induced_B_torus_nT": 216.2460611576069,
+        "max_spin_rpm": 1.180104022360033,
+        "peak_poloidal_speed_mm_s": 0.029936255492252452,
+        "induced_B_torus_nT": 962.1916831013268,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.5215596092380814,
-        "yee_3iI_to_3R_ratio": 24.05498210154746,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.1755376854428032,
-        "coherence_metric": 1.492015846813856,
-        "lambda_m4": 1.0049201584681386
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 0.37373935135773895,
+        "lambda_m4": 1.0037000195784416
       }
     },
     {
@@ -677,16 +677,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 262.59143704794127,
-        "peak_poloidal_speed_mm_s": 0.9722049589792446,
-        "induced_B_torus_nT": 13840.167830455533,
+        "max_spin_rpm": 24.705497728403337,
+        "peak_poloidal_speed_mm_s": 0.08253104366478942,
+        "induced_B_torus_nT": 85197.27455848137,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.5191537547187977,
-        "yee_3iI_to_3R_ratio": 24.041761932661384,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.17544121320941602,
-        "coherence_metric": 23.8740609131684,
-        "lambda_m4": 1.228740609131684
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 0.8291116233433999,
+        "lambda_m4": 1.0082082050710997
       }
     },
     {
@@ -716,16 +716,16 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1050.405350810129,
-        "peak_poloidal_speed_mm_s": 15.217833342535771,
-        "induced_B_torus_nT": 110722.36616668655,
+        "max_spin_rpm": 148.00517228384933,
+        "peak_poloidal_speed_mm_s": 0.23601029361974207,
+        "induced_B_torus_nT": 1121034.5983285604,
         "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.48324548677496343,
-        "yee_3iI_to_3R_ratio": 23.871747966379587,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.17420056135575543,
-        "coherence_metric": 95.49984420924075,
-        "lambda_m4": 1.9449984420924076
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 1.8929760714559005,
+        "lambda_m4": 1.0187404631074135
       }
     }
   ]
