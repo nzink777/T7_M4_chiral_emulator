@@ -77,16 +77,16 @@
         "max": 6.641619435313801
       },
       "residual_offset": {
-        "mean": 0.8023585770429973,
-        "variance": 1.4231374206950227,
-        "min": -0.05456208294800898,
-        "max": 5.543242391002288
+        "mean": 0.5788250881142297,
+        "variance": 0.9747537883325864,
+        "min": -0.08383903751036587,
+        "max": 4.805818320856188
       },
       "memory_ratio": {
-        "mean": 0.48256426804135466,
-        "variance": 0.13344984022782191,
-        "min": -0.6851616513161484,
-        "max": 0.8677381826165858
+        "mean": 0.20018618531173527,
+        "variance": 0.20587273765046224,
+        "min": -1.0528060932002035,
+        "max": 0.7523019492155416
       }
     },
     "induced_B_torus_nT": {
@@ -160,11 +160,11 @@
           "dt": 0.02,
           "n_pre": 40,
           "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_off": 160,
+          "total_steps": 300,
           "t_pre_s": 0.8,
           "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_off_s": 3.2
         },
         "coherence_metric": {
           "baseline_mean": 0.2534686058929466,
@@ -173,9 +173,9 @@
           "steady_state_end_of_on": 6.641619435313801,
           "rise_time_s": 1.78,
           "tau_decay_s": null,
-          "end_of_run": 5.796710996895234,
-          "residual_offset": 5.543242391002288,
-          "memory_ratio": 0.8677381826165858
+          "end_of_run": 5.0592869267491345,
+          "residual_offset": 4.805818320856188,
+          "memory_ratio": 0.7523019492155416
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
@@ -233,11 +233,11 @@
           "dt": 0.02,
           "n_pre": 40,
           "n_on": 100,
-          "n_off": 160,
-          "total_steps": 300,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
           "t_on_s": 2.0,
-          "t_off_s": 3.2
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.2534686058929466,
@@ -246,9 +246,9 @@
           "steady_state_end_of_on": 6.641619435313801,
           "rise_time_s": 1.78,
           "tau_decay_s": null,
-          "end_of_run": 5.0592869267491345,
-          "residual_offset": 4.805818320856188,
-          "memory_ratio": 0.7523019492155416
+          "end_of_run": 3.8539371995747778,
+          "residual_offset": 3.600468593681831,
+          "memory_ratio": 0.5636167162960125
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
@@ -265,79 +265,6 @@
     },
     {
       "run_id": 11,
-      "gel": {
-        "name": "cnc_batio3_fe3o4_chiral_gel",
-        "rho": 1015.0,
-        "tau_y": 0.01,
-        "K_visc": 0.04,
-        "n_flow": 0.55,
-        "eps_r": 220.0,
-        "sigma": 100.0,
-        "chi_mag": 0.00012,
-        "gamma_chiral": -0.5,
-        "poloidal_gain": 2.0
-      },
-      "magnet": {
-        "name": "anti_helmholtz_euler_cusp",
-        "R_cell": 0.025,
-        "H_cell": 0.08,
-        "B_ring": 0.18,
-        "z_sep": 0.045,
-        "euler_pitch": 1.25,
-        "theta_tilt_rad": 0.45,
-        "omega_7_scale": 1.0,
-        "V_drive": 96.0,
-        "f_drive": 0.0
-      },
-      "metrics": {
-        "max_spin_rpm": 227.50740060863683,
-        "peak_poloidal_speed_mm_s": 0.4308608511847591,
-        "induced_B_torus_nT": 1880001.6109333702,
-        "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.5215,
-        "yee_3iI_to_3R_ratio": 24.05,
-        "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 4.05018032877146,
-        "lambda_m4": 1.0400967852548375
-      },
-      "transitions": {
-        "schedule": {
-          "dt": 0.02,
-          "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
-          "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
-        },
-        "coherence_metric": {
-          "baseline_mean": 0.20990878059575654,
-          "baseline_variance": 0.023494130951840993,
-          "peak_arrayed": 4.05018032877146,
-          "steady_state_end_of_on": 4.05018032877146,
-          "rise_time_s": 1.78,
-          "tau_decay_s": null,
-          "end_of_run": 3.381015954721486,
-          "residual_offset": 3.1711071741257295,
-          "memory_ratio": 0.8257507664092514
-        },
-        "induced_B_torus_nT": {
-          "baseline_mean": 0.0,
-          "baseline_variance": 0.0,
-          "peak_arrayed": 1880001.6109333702,
-          "steady_state_end_of_on": 1880001.6109333702,
-          "rise_time_s": 1.78,
-          "tau_decay_s": 0.0,
-          "end_of_run": 0.0,
-          "residual_offset": 0.0,
-          "memory_ratio": 0.0
-        }
-      }
-    },
-    {
-      "run_id": 12,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -410,6 +337,79 @@
       }
     },
     {
+      "run_id": 12,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.04,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 96.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 227.50740060863683,
+        "peak_poloidal_speed_mm_s": 0.4308608511847591,
+        "induced_B_torus_nT": 1880001.6109333702,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 4.05018032877146,
+        "lambda_m4": 1.0400967852548375
+      },
+      "transitions": {
+        "schedule": {
+          "dt": 0.02,
+          "n_pre": 40,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
+          "t_pre_s": 0.8,
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
+        },
+        "coherence_metric": {
+          "baseline_mean": 0.20990878059575654,
+          "baseline_variance": 0.023494130951840993,
+          "peak_arrayed": 4.05018032877146,
+          "steady_state_end_of_on": 4.05018032877146,
+          "rise_time_s": 1.78,
+          "tau_decay_s": 5.68,
+          "end_of_run": 1.9668253655821202,
+          "residual_offset": 1.7569165849863637,
+          "memory_ratio": 0.457498008394999
+        },
+        "induced_B_torus_nT": {
+          "baseline_mean": 0.0,
+          "baseline_variance": 0.0,
+          "peak_arrayed": 1880001.6109333702,
+          "steady_state_end_of_on": 1880001.6109333702,
+          "rise_time_s": 1.78,
+          "tau_decay_s": 0.0,
+          "end_of_run": 0.0,
+          "residual_offset": 0.0,
+          "memory_ratio": 0.0
+        }
+      }
+    },
+    {
       "run_id": 21,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
@@ -452,11 +452,11 @@
           "dt": 0.02,
           "n_pre": 40,
           "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_off": 160,
+          "total_steps": 240,
           "t_pre_s": 0.8,
           "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_off_s": 3.2
         },
         "coherence_metric": {
           "baseline_mean": 0.2534686058929466,
@@ -465,9 +465,9 @@
           "steady_state_end_of_on": 2.9450260722951476,
           "rise_time_s": 0.7000000000000001,
           "tau_decay_s": null,
-          "end_of_run": 2.5703768765561392,
-          "residual_offset": 2.3169082706631925,
-          "memory_ratio": 0.8608057972324101
+          "end_of_run": 2.2433883861631108,
+          "residual_offset": 1.989919780270164,
+          "memory_ratio": 0.7393190764491034
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
@@ -486,79 +486,6 @@
   "runs": [
     {
       "run_id": 1,
-      "gel": {
-        "name": "cnc_batio3_fe3o4_chiral_gel",
-        "rho": 1015.0,
-        "tau_y": 0.01,
-        "K_visc": 0.04,
-        "n_flow": 0.55,
-        "eps_r": 220.0,
-        "sigma": 100.0,
-        "chi_mag": 0.00012,
-        "gamma_chiral": -0.5,
-        "poloidal_gain": 2.0
-      },
-      "magnet": {
-        "name": "anti_helmholtz_euler_cusp",
-        "R_cell": 0.025,
-        "H_cell": 0.08,
-        "B_ring": 0.18,
-        "z_sep": 0.045,
-        "euler_pitch": 1.25,
-        "theta_tilt_rad": 0.45,
-        "omega_7_scale": 1.0,
-        "V_drive": 12.0,
-        "f_drive": 0.0
-      },
-      "metrics": {
-        "max_spin_rpm": 1.3456030297808095,
-        "peak_poloidal_speed_mm_s": 0.030415163996825385,
-        "induced_B_torus_nT": 1102.5906750699896,
-        "M6_trace_abs": 0.0,
-        "M6_gauge_invariant_TrM2": 0.5215,
-        "yee_3iI_to_3R_ratio": 24.05,
-        "alpha_inv_ref": 137.035999084,
-        "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.5045721151514102,
-        "lambda_m4": 1.004995263939999
-      },
-      "transitions": {
-        "schedule": {
-          "dt": 0.02,
-          "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
-          "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
-        },
-        "coherence_metric": {
-          "baseline_mean": 0.20990878059575654,
-          "baseline_variance": 0.023494130951840993,
-          "peak_arrayed": 0.4432884433117026,
-          "steady_state_end_of_on": 0.4432884433117026,
-          "rise_time_s": 0.42,
-          "tau_decay_s": null,
-          "end_of_run": 0.3700490293564627,
-          "residual_offset": 0.16014024876070618,
-          "memory_ratio": 0.6861791078840407
-        },
-        "induced_B_torus_nT": {
-          "baseline_mean": 0.0,
-          "baseline_variance": 0.0,
-          "peak_arrayed": 1102.5906750699896,
-          "steady_state_end_of_on": 1102.5906750699896,
-          "rise_time_s": 0.06,
-          "tau_decay_s": 0.0,
-          "end_of_run": 0.0,
-          "residual_offset": 0.0,
-          "memory_ratio": 0.0
-        }
-      }
-    },
-    {
-      "run_id": 2,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -631,7 +558,7 @@
       }
     },
     {
-      "run_id": 3,
+      "run_id": 2,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -657,45 +584,45 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1.5379041154968884,
-        "peak_poloidal_speed_mm_s": 0.03109805524530046,
-        "induced_B_torus_nT": 1267.4138955387284,
+        "max_spin_rpm": 1.3456030297808095,
+        "peak_poloidal_speed_mm_s": 0.030415163996825385,
+        "induced_B_torus_nT": 1102.5906750699896,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.5134521093131553,
-        "lambda_m4": 1.0050831758822003
+        "coherence_metric": 0.5045721151514102,
+        "lambda_m4": 1.004995263939999
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.20990878059575654,
           "baseline_variance": 0.023494130951840993,
-          "peak_arrayed": 0.5134521093131553,
-          "steady_state_end_of_on": 0.5134521093131553,
-          "rise_time_s": 1.46,
-          "tau_decay_s": null,
-          "end_of_run": 0.428620365676349,
-          "residual_offset": 0.21871158508059244,
-          "memory_ratio": 0.7205283871819652
+          "peak_arrayed": 0.4432884433117026,
+          "steady_state_end_of_on": 0.4432884433117026,
+          "rise_time_s": 0.42,
+          "tau_decay_s": 2.7,
+          "end_of_run": 0.21526719400154037,
+          "residual_offset": 0.0053584134057838295,
+          "memory_ratio": 0.02296007005677152
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 1267.4138955387284,
-          "steady_state_end_of_on": 1267.4138955387284,
-          "rise_time_s": 1.06,
+          "peak_arrayed": 1102.5906750699896,
+          "steady_state_end_of_on": 1102.5906750699896,
+          "rise_time_s": 0.06,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -704,7 +631,7 @@
       }
     },
     {
-      "run_id": 4,
+      "run_id": 3,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -777,7 +704,7 @@
       }
     },
     {
-      "run_id": 5,
+      "run_id": 4,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -799,49 +726,49 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 48.0,
+        "V_drive": 12.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 21.15810073724105,
-        "peak_poloidal_speed_mm_s": 0.06643143578179761,
-        "induced_B_torus_nT": 72043.88004848047,
+        "max_spin_rpm": 1.5379041154968884,
+        "peak_poloidal_speed_mm_s": 0.03109805524530046,
+        "induced_B_torus_nT": 1267.4138955387284,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.9321871676311435,
-        "lambda_m4": 1.0092286529595482
+        "coherence_metric": 0.5134521093131553,
+        "lambda_m4": 1.0050831758822003
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.20990878059575654,
           "baseline_variance": 0.023494130951840993,
-          "peak_arrayed": 0.9321871676311435,
-          "steady_state_end_of_on": 0.9321871676311435,
-          "rise_time_s": 0.68,
-          "tau_decay_s": null,
-          "end_of_run": 0.77817268138862,
-          "residual_offset": 0.5682639007928634,
-          "memory_ratio": 0.7867657554109011
+          "peak_arrayed": 0.5134521093131553,
+          "steady_state_end_of_on": 0.5134521093131553,
+          "rise_time_s": 1.46,
+          "tau_decay_s": 3.1,
+          "end_of_run": 0.2493396714795363,
+          "residual_offset": 0.03943089088377977,
+          "memory_ratio": 0.1299020177791166
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 72043.88004848047,
-          "steady_state_end_of_on": 72043.88004848047,
-          "rise_time_s": 0.64,
+          "peak_arrayed": 1267.4138955387284,
+          "steady_state_end_of_on": 1267.4138955387284,
+          "rise_time_s": 1.06,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -850,7 +777,7 @@
       }
     },
     {
-      "run_id": 6,
+      "run_id": 5,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -923,7 +850,7 @@
       }
     },
     {
-      "run_id": 7,
+      "run_id": 6,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -949,45 +876,45 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 36.65150600908543,
-        "peak_poloidal_speed_mm_s": 0.1433622605800007,
-        "induced_B_torus_nT": 131760.90507637907,
+        "max_spin_rpm": 21.15810073724105,
+        "peak_poloidal_speed_mm_s": 0.06643143578179761,
+        "induced_B_torus_nT": 72043.88004848047,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 1.7060029528311675,
-        "lambda_m4": 1.0168894292330286
+        "coherence_metric": 0.9321871676311435,
+        "lambda_m4": 1.0092286529595482
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.20990878059575654,
           "baseline_variance": 0.023494130951840993,
-          "peak_arrayed": 1.7060029528311675,
-          "steady_state_end_of_on": 1.7060029528311675,
-          "rise_time_s": 1.76,
-          "tau_decay_s": null,
-          "end_of_run": 1.424139849119695,
-          "residual_offset": 1.2142310685239386,
-          "memory_ratio": 0.8116006940322997
+          "peak_arrayed": 0.9321871676311435,
+          "steady_state_end_of_on": 0.9321871676311435,
+          "rise_time_s": 0.68,
+          "tau_decay_s": 4.34,
+          "end_of_run": 0.4526833913400663,
+          "residual_offset": 0.24277461074430975,
+          "memory_ratio": 0.33612332184102217
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 131760.90507637907,
-          "steady_state_end_of_on": 131760.90507637907,
-          "rise_time_s": 1.72,
+          "peak_arrayed": 72043.88004848047,
+          "steady_state_end_of_on": 72043.88004848047,
+          "rise_time_s": 0.64,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -996,7 +923,7 @@
       }
     },
     {
-      "run_id": 8,
+      "run_id": 7,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1069,7 +996,7 @@
       }
     },
     {
-      "run_id": 9,
+      "run_id": 8,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1091,49 +1018,49 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 96.0,
+        "V_drive": 48.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 113.27765506893049,
-        "peak_poloidal_speed_mm_s": 0.1623099879819551,
-        "induced_B_torus_nT": 823896.8051727861,
+        "max_spin_rpm": 36.65150600908543,
+        "peak_poloidal_speed_mm_s": 0.1433622605800007,
+        "induced_B_torus_nT": 131760.90507637907,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 1.8807798098314492,
-        "lambda_m4": 1.0186197201173313
+        "coherence_metric": 1.7060029528311675,
+        "lambda_m4": 1.0168894292330286
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.20990878059575654,
           "baseline_variance": 0.023494130951840993,
-          "peak_arrayed": 1.8807798098314492,
-          "steady_state_end_of_on": 1.8807798098314492,
-          "rise_time_s": 0.7000000000000001,
-          "tau_decay_s": null,
-          "end_of_run": 1.5700403508421144,
-          "residual_offset": 1.360131570246358,
-          "memory_ratio": 0.8140254672250338
+          "peak_arrayed": 1.7060029528311675,
+          "steady_state_end_of_on": 1.7060029528311675,
+          "rise_time_s": 1.76,
+          "tau_decay_s": 5.1000000000000005,
+          "end_of_run": 0.8284593793393232,
+          "residual_offset": 0.6185505987435667,
+          "memory_ratio": 0.4134436255569061
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 823896.8051727861,
-          "steady_state_end_of_on": 823896.8051727861,
-          "rise_time_s": 0.7000000000000001,
+          "peak_arrayed": 131760.90507637907,
+          "steady_state_end_of_on": 131760.90507637907,
+          "rise_time_s": 1.72,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -1142,7 +1069,7 @@
       }
     },
     {
-      "run_id": 10,
+      "run_id": 9,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1215,7 +1142,7 @@
       }
     },
     {
-      "run_id": 11,
+      "run_id": 10,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1241,45 +1168,45 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 227.50740060863683,
-        "peak_poloidal_speed_mm_s": 0.4308608511847591,
-        "induced_B_torus_nT": 1880001.6109333702,
+        "max_spin_rpm": 113.27765506893049,
+        "peak_poloidal_speed_mm_s": 0.1623099879819551,
+        "induced_B_torus_nT": 823896.8051727861,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 4.05018032877146,
-        "lambda_m4": 1.0400967852548375
+        "coherence_metric": 1.8807798098314492,
+        "lambda_m4": 1.0186197201173313
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.20990878059575654,
           "baseline_variance": 0.023494130951840993,
-          "peak_arrayed": 4.05018032877146,
-          "steady_state_end_of_on": 4.05018032877146,
-          "rise_time_s": 1.78,
-          "tau_decay_s": null,
-          "end_of_run": 3.381015954721486,
-          "residual_offset": 3.1711071741257295,
-          "memory_ratio": 0.8257507664092514
+          "peak_arrayed": 1.8807798098314492,
+          "steady_state_end_of_on": 1.8807798098314492,
+          "rise_time_s": 0.7000000000000001,
+          "tau_decay_s": 5.2,
+          "end_of_run": 0.9133335152445624,
+          "residual_offset": 0.7034247346488058,
+          "memory_ratio": 0.4209928368741744
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 1880001.6109333702,
-          "steady_state_end_of_on": 1880001.6109333702,
-          "rise_time_s": 1.78,
+          "peak_arrayed": 823896.8051727861,
+          "steady_state_end_of_on": 823896.8051727861,
+          "rise_time_s": 0.7000000000000001,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -1288,7 +1215,7 @@
       }
     },
     {
-      "run_id": 12,
+      "run_id": 11,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1361,12 +1288,12 @@
       }
     },
     {
-      "run_id": 13,
+      "run_id": 12,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
         "tau_y": 0.01,
-        "K_visc": 0.08,
+        "K_visc": 0.04,
         "n_flow": 0.55,
         "eps_r": 220.0,
         "sigma": 100.0,
@@ -1383,49 +1310,49 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 12.0,
+        "V_drive": 96.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1.4617448527167134,
-        "peak_poloidal_speed_mm_s": 0.030595113215173313,
-        "induced_B_torus_nT": 1201.920139730266,
+        "max_spin_rpm": 227.50740060863683,
+        "peak_poloidal_speed_mm_s": 0.4308608511847591,
+        "induced_B_torus_nT": 1880001.6109333702,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.6082994376628014,
-        "lambda_m4": 1.0060221644328617
+        "coherence_metric": 4.05018032877146,
+        "lambda_m4": 1.0400967852548375
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
-          "baseline_mean": 0.2534686058929466,
-          "baseline_variance": 0.03435843601629505,
-          "peak_arrayed": 0.5826633934680001,
-          "steady_state_end_of_on": 0.5826633934680001,
-          "rise_time_s": 0.54,
-          "tau_decay_s": null,
-          "end_of_run": 0.5085403241332617,
-          "residual_offset": 0.25507171824031505,
-          "memory_ratio": 0.7748352278577951
+          "baseline_mean": 0.20990878059575654,
+          "baseline_variance": 0.023494130951840993,
+          "peak_arrayed": 4.05018032877146,
+          "steady_state_end_of_on": 4.05018032877146,
+          "rise_time_s": 1.78,
+          "tau_decay_s": 5.68,
+          "end_of_run": 1.9668253655821202,
+          "residual_offset": 1.7569165849863637,
+          "memory_ratio": 0.457498008394999
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 1201.920139730266,
-          "steady_state_end_of_on": 1201.920139730266,
-          "rise_time_s": 0.32,
+          "peak_arrayed": 1880001.6109333702,
+          "steady_state_end_of_on": 1880001.6109333702,
+          "rise_time_s": 1.78,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -1434,7 +1361,7 @@
       }
     },
     {
-      "run_id": 14,
+      "run_id": 13,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1507,7 +1434,7 @@
       }
     },
     {
-      "run_id": 15,
+      "run_id": 14,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1533,45 +1460,45 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1.802984953883977,
-        "peak_poloidal_speed_mm_s": 0.03885270060378543,
-        "induced_B_torus_nT": 1497.5901202406626,
+        "max_spin_rpm": 1.4617448527167134,
+        "peak_poloidal_speed_mm_s": 0.030595113215173313,
+        "induced_B_torus_nT": 1201.920139730266,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.7339226925325282,
-        "lambda_m4": 1.0072658346560721
+        "coherence_metric": 0.6082994376628014,
+        "lambda_m4": 1.0060221644328617
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.2534686058929466,
           "baseline_variance": 0.03435843601629505,
-          "peak_arrayed": 0.7339226925325282,
-          "steady_state_end_of_on": 0.7339226925325282,
-          "rise_time_s": 1.6,
-          "tau_decay_s": null,
-          "end_of_run": 0.6405572893944732,
-          "residual_offset": 0.3870886835015266,
-          "memory_ratio": 0.8056725798898363
+          "peak_arrayed": 0.5826633934680001,
+          "steady_state_end_of_on": 0.5826633934680001,
+          "rise_time_s": 0.54,
+          "tau_decay_s": 3.9,
+          "end_of_run": 0.3381024987636473,
+          "residual_offset": 0.08463389287070067,
+          "memory_ratio": 0.2570936602433442
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 1497.5901202406626,
-          "steady_state_end_of_on": 1497.5901202406626,
-          "rise_time_s": 1.3800000000000001,
+          "peak_arrayed": 1201.920139730266,
+          "steady_state_end_of_on": 1201.920139730266,
+          "rise_time_s": 0.32,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -1580,7 +1507,7 @@
       }
     },
     {
-      "run_id": 16,
+      "run_id": 15,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1653,7 +1580,7 @@
       }
     },
     {
-      "run_id": 17,
+      "run_id": 16,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1675,49 +1602,49 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 48.0,
+        "V_drive": 12.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 25.669620972869776,
-        "peak_poloidal_speed_mm_s": 0.0870750083389979,
-        "induced_B_torus_nT": 88825.47168859333,
+        "max_spin_rpm": 1.802984953883977,
+        "peak_poloidal_speed_mm_s": 0.03885270060378543,
+        "induced_B_torus_nT": 1497.5901202406626,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 1.3836346179901682,
-        "lambda_m4": 1.0136979827181027
+        "coherence_metric": 0.7339226925325282,
+        "lambda_m4": 1.0072658346560721
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.2534686058929466,
           "baseline_variance": 0.03435843601629505,
-          "peak_arrayed": 1.3836346179901682,
-          "steady_state_end_of_on": 1.3836346179901682,
-          "rise_time_s": 0.7000000000000001,
-          "tau_decay_s": null,
-          "end_of_run": 1.2076166187937543,
-          "residual_offset": 0.9541480129008076,
-          "memory_ratio": 0.8442547401777005
+          "peak_arrayed": 0.7339226925325282,
+          "steady_state_end_of_on": 0.7339226925325282,
+          "rise_time_s": 1.6,
+          "tau_decay_s": 4.66,
+          "end_of_run": 0.4258738390405159,
+          "residual_offset": 0.17240523314756928,
+          "memory_ratio": 0.35883810324814897
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 88825.47168859333,
-          "steady_state_end_of_on": 88825.47168859333,
-          "rise_time_s": 0.66,
+          "peak_arrayed": 1497.5901202406626,
+          "steady_state_end_of_on": 1497.5901202406626,
+          "rise_time_s": 1.3800000000000001,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -1726,7 +1653,7 @@
       }
     },
     {
-      "run_id": 18,
+      "run_id": 17,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1799,7 +1726,7 @@
       }
     },
     {
-      "run_id": 19,
+      "run_id": 18,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1825,45 +1752,45 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 47.58212577784323,
-        "peak_poloidal_speed_mm_s": 0.20659873742162074,
-        "induced_B_torus_nT": 177432.24568221695,
+        "max_spin_rpm": 25.669620972869776,
+        "peak_poloidal_speed_mm_s": 0.0870750083389979,
+        "induced_B_torus_nT": 88825.47168859333,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 2.728024349439731,
-        "lambda_m4": 1.0270074410594534
+        "coherence_metric": 1.3836346179901682,
+        "lambda_m4": 1.0136979827181027
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.2534686058929466,
           "baseline_variance": 0.03435843601629505,
-          "peak_arrayed": 2.728024349439731,
-          "steady_state_end_of_on": 2.728024349439731,
-          "rise_time_s": 1.76,
-          "tau_decay_s": null,
-          "end_of_run": 2.3809808586914443,
-          "residual_offset": 2.1275122527984975,
-          "memory_ratio": 0.8597552341856447
+          "peak_arrayed": 1.3836346179901682,
+          "steady_state_end_of_on": 1.3836346179901682,
+          "rise_time_s": 0.7000000000000001,
+          "tau_decay_s": 6.16,
+          "end_of_run": 0.8028826368067564,
+          "residual_offset": 0.5494140309138098,
+          "memory_ratio": 0.4861356871759713
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 177432.24568221695,
-          "steady_state_end_of_on": 177432.24568221695,
-          "rise_time_s": 1.76,
+          "peak_arrayed": 88825.47168859333,
+          "steady_state_end_of_on": 88825.47168859333,
+          "rise_time_s": 0.66,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -1872,7 +1799,7 @@
       }
     },
     {
-      "run_id": 20,
+      "run_id": 19,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1945,7 +1872,7 @@
       }
     },
     {
-      "run_id": 21,
+      "run_id": 20,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -1967,49 +1894,49 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 96.0,
+        "V_drive": 48.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 144.2805654165687,
-        "peak_poloidal_speed_mm_s": 0.2277373512117104,
-        "induced_B_torus_nT": 1088164.8732768302,
+        "max_spin_rpm": 47.58212577784323,
+        "peak_poloidal_speed_mm_s": 0.20659873742162074,
+        "induced_B_torus_nT": 177432.24568221695,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 2.9450260722951476,
-        "lambda_m4": 1.029155758115722
+        "coherence_metric": 2.728024349439731,
+        "lambda_m4": 1.0270074410594534
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.2534686058929466,
           "baseline_variance": 0.03435843601629505,
-          "peak_arrayed": 2.9450260722951476,
-          "steady_state_end_of_on": 2.9450260722951476,
-          "rise_time_s": 0.7000000000000001,
+          "peak_arrayed": 2.728024349439731,
+          "steady_state_end_of_on": 2.728024349439731,
+          "rise_time_s": 1.76,
           "tau_decay_s": null,
-          "end_of_run": 2.5703768765561392,
-          "residual_offset": 2.3169082706631925,
-          "memory_ratio": 0.8608057972324101
+          "end_of_run": 1.5829926155886112,
+          "residual_offset": 1.3295240096956644,
+          "memory_ratio": 0.5372778581217393
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 1088164.8732768302,
-          "steady_state_end_of_on": 1088164.8732768302,
-          "rise_time_s": 0.7000000000000001,
+          "peak_arrayed": 177432.24568221695,
+          "steady_state_end_of_on": 177432.24568221695,
+          "rise_time_s": 1.76,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -2018,7 +1945,7 @@
       }
     },
     {
-      "run_id": 22,
+      "run_id": 21,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2091,7 +2018,7 @@
       }
     },
     {
-      "run_id": 23,
+      "run_id": 22,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2117,45 +2044,45 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 302.1933934463667,
-        "peak_poloidal_speed_mm_s": 0.6411243135314841,
-        "induced_B_torus_nT": 2692816.669838422,
+        "max_spin_rpm": 144.2805654165687,
+        "peak_poloidal_speed_mm_s": 0.2277373512117104,
+        "induced_B_torus_nT": 1088164.8732768302,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 6.641619435313801,
-        "lambda_m4": 1.0657520324096066
+        "coherence_metric": 2.9450260722951476,
+        "lambda_m4": 1.029155758115722
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.2534686058929466,
           "baseline_variance": 0.03435843601629505,
-          "peak_arrayed": 6.641619435313801,
-          "steady_state_end_of_on": 6.641619435313801,
-          "rise_time_s": 1.78,
+          "peak_arrayed": 2.9450260722951476,
+          "steady_state_end_of_on": 2.9450260722951476,
+          "rise_time_s": 0.7000000000000001,
           "tau_decay_s": null,
-          "end_of_run": 5.796710996895234,
-          "residual_offset": 5.543242391002288,
-          "memory_ratio": 0.8677381826165858
+          "end_of_run": 1.7089123585413006,
+          "residual_offset": 1.4554437526483541,
+          "memory_ratio": 0.5407440750629199
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 2692816.669838422,
-          "steady_state_end_of_on": 2692816.669838422,
-          "rise_time_s": 1.8,
+          "peak_arrayed": 1088164.8732768302,
+          "steady_state_end_of_on": 1088164.8732768302,
+          "rise_time_s": 0.7000000000000001,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -2164,7 +2091,7 @@
       }
     },
     {
-      "run_id": 24,
+      "run_id": 23,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2237,12 +2164,12 @@
       }
     },
     {
-      "run_id": 25,
+      "run_id": 24,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
-        "tau_y": 0.04,
-        "K_visc": 0.04,
+        "tau_y": 0.01,
+        "K_visc": 0.08,
         "n_flow": 0.55,
         "eps_r": 220.0,
         "sigma": 100.0,
@@ -2259,49 +2186,49 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 12.0,
+        "V_drive": 96.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1.1130157687033726,
-        "peak_poloidal_speed_mm_s": 0.02913551715102376,
-        "induced_B_torus_nT": 905.6607988572337,
+        "max_spin_rpm": 302.1933934463667,
+        "peak_poloidal_speed_mm_s": 0.6411243135314841,
+        "induced_B_torus_nT": 2692816.669838422,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.24390796496421904,
-        "lambda_m4": 1.0024146888531458
+        "coherence_metric": 6.641619435313801,
+        "lambda_m4": 1.0657520324096066
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
-          "baseline_mean": 0.1002528812947607,
-          "baseline_variance": 0.005250266018973088,
-          "peak_arrayed": 0.1798867645443544,
-          "steady_state_end_of_on": 0.15524357543523754,
-          "rise_time_s": 0.0,
-          "tau_decay_s": 0.6,
-          "end_of_run": 0.09304743618323501,
-          "residual_offset": -0.007205445111525696,
-          "memory_ratio": -0.09048215178634353
+          "baseline_mean": 0.2534686058929466,
+          "baseline_variance": 0.03435843601629505,
+          "peak_arrayed": 6.641619435313801,
+          "steady_state_end_of_on": 6.641619435313801,
+          "rise_time_s": 1.78,
+          "tau_decay_s": null,
+          "end_of_run": 3.8539371995747778,
+          "residual_offset": 3.600468593681831,
+          "memory_ratio": 0.5636167162960125
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 905.6607988572337,
-          "steady_state_end_of_on": 788.8004768497806,
-          "rise_time_s": 0.0,
+          "peak_arrayed": 2692816.669838422,
+          "steady_state_end_of_on": 2692816.669838422,
+          "rise_time_s": 1.8,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -2310,7 +2237,7 @@
       }
     },
     {
-      "run_id": 26,
+      "run_id": 25,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2383,7 +2310,7 @@
       }
     },
     {
-      "run_id": 27,
+      "run_id": 26,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2424,29 +2351,29 @@
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.1002528812947607,
           "baseline_variance": 0.005250266018973088,
           "peak_arrayed": 0.1798867645443544,
-          "steady_state_end_of_on": 0.12718831012320977,
+          "steady_state_end_of_on": 0.15524357543523754,
           "rise_time_s": 0.0,
-          "tau_decay_s": 0.34,
-          "end_of_run": 0.07623211547572124,
-          "residual_offset": -0.02402076581903946,
-          "memory_ratio": -0.3016400160187092
+          "tau_decay_s": 0.6,
+          "end_of_run": 0.020034418204443998,
+          "residual_offset": -0.0802184630903167,
+          "memory_ratio": -1.007340843079205
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
           "peak_arrayed": 905.6607988572337,
-          "steady_state_end_of_on": 654.8546221937551,
+          "steady_state_end_of_on": 788.8004768497806,
           "rise_time_s": 0.0,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
@@ -2456,7 +2383,7 @@
       }
     },
     {
-      "run_id": 28,
+      "run_id": 27,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2529,7 +2456,7 @@
       }
     },
     {
-      "run_id": 29,
+      "run_id": 28,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2551,13 +2478,13 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 48.0,
+        "V_drive": 12.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 11.669282542877149,
+        "max_spin_rpm": 1.1130157687033726,
         "peak_poloidal_speed_mm_s": 0.02913551715102376,
-        "induced_B_torus_nT": 38376.754012923484,
+        "induced_B_torus_nT": 905.6607988572337,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
@@ -2570,30 +2497,30 @@
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.1002528812947607,
           "baseline_variance": 0.005250266018973088,
-          "peak_arrayed": 0.24221294312150746,
-          "steady_state_end_of_on": 0.24221294312150746,
-          "rise_time_s": 0.6,
-          "tau_decay_s": 1.08,
-          "end_of_run": 0.1451737587508335,
-          "residual_offset": 0.04492087745607279,
-          "memory_ratio": 0.31643320577653644
+          "peak_arrayed": 0.1798867645443544,
+          "steady_state_end_of_on": 0.12718831012320977,
+          "rise_time_s": 0.0,
+          "tau_decay_s": 0.34,
+          "end_of_run": 0.01641384378439484,
+          "residual_offset": -0.08383903751036587,
+          "memory_ratio": -1.0528060932002035
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 38376.754012923484,
-          "steady_state_end_of_on": 38376.754012923484,
-          "rise_time_s": 0.44,
+          "peak_arrayed": 905.6607988572337,
+          "steady_state_end_of_on": 654.8546221937551,
+          "rise_time_s": 0.0,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -2602,7 +2529,7 @@
       }
     },
     {
-      "run_id": 30,
+      "run_id": 29,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2675,7 +2602,7 @@
       }
     },
     {
-      "run_id": 31,
+      "run_id": 30,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2701,45 +2628,45 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 14.733419046866581,
-        "peak_poloidal_speed_mm_s": 0.040024991084794674,
-        "induced_B_torus_nT": 49007.22864866653,
+        "max_spin_rpm": 11.669282542877149,
+        "peak_poloidal_speed_mm_s": 0.02913551715102376,
+        "induced_B_torus_nT": 38376.754012923484,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.3130276286683107,
-        "lambda_m4": 1.0030989735238163
+        "coherence_metric": 0.24390796496421904,
+        "lambda_m4": 1.0024146888531458
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.1002528812947607,
           "baseline_variance": 0.005250266018973088,
-          "peak_arrayed": 0.3130276286683107,
-          "steady_state_end_of_on": 0.3130276286683107,
-          "rise_time_s": 1.58,
-          "tau_decay_s": 1.28,
-          "end_of_run": 0.18761754372408537,
-          "residual_offset": 0.08736466242932467,
-          "memory_ratio": 0.4105969505673819
+          "peak_arrayed": 0.24221294312150746,
+          "steady_state_end_of_on": 0.24221294312150746,
+          "rise_time_s": 0.6,
+          "tau_decay_s": 1.08,
+          "end_of_run": 0.031257946639149804,
+          "residual_offset": -0.0689949346556109,
+          "memory_ratio": -0.48601651596781387
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 49007.22864866653,
-          "steady_state_end_of_on": 49007.22864866653,
-          "rise_time_s": 1.3800000000000001,
+          "peak_arrayed": 38376.754012923484,
+          "steady_state_end_of_on": 38376.754012923484,
+          "rise_time_s": 0.44,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -2748,7 +2675,7 @@
       }
     },
     {
-      "run_id": 32,
+      "run_id": 31,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2821,7 +2748,7 @@
       }
     },
     {
-      "run_id": 33,
+      "run_id": 32,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2843,49 +2770,49 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 96.0,
+        "V_drive": 48.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 53.04848289794372,
-        "peak_poloidal_speed_mm_s": 0.05611583775285396,
-        "induced_B_torus_nT": 358137.84780511435,
+        "max_spin_rpm": 14.733419046866581,
+        "peak_poloidal_speed_mm_s": 0.040024991084794674,
+        "induced_B_torus_nT": 49007.22864866653,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.40821555384075325,
-        "lambda_m4": 1.0040413339830234
+        "coherence_metric": 0.3130276286683107,
+        "lambda_m4": 1.0030989735238163
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.1002528812947607,
           "baseline_variance": 0.005250266018973088,
-          "peak_arrayed": 0.40821555384075325,
-          "steady_state_end_of_on": 0.40821555384075325,
-          "rise_time_s": 0.68,
-          "tau_decay_s": 1.48,
-          "end_of_run": 0.24466977514858143,
-          "residual_offset": 0.14441689385382073,
-          "memory_ratio": 0.4689428516121637
+          "peak_arrayed": 0.3130276286683107,
+          "steady_state_end_of_on": 0.3130276286683107,
+          "rise_time_s": 1.58,
+          "tau_decay_s": 1.28,
+          "end_of_run": 0.040396688910985086,
+          "residual_offset": -0.05985619238377562,
+          "memory_ratio": -0.2813124824380186
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 358137.84780511435,
-          "steady_state_end_of_on": 358137.84780511435,
-          "rise_time_s": 0.64,
+          "peak_arrayed": 49007.22864866653,
+          "steady_state_end_of_on": 49007.22864866653,
+          "rise_time_s": 1.3800000000000001,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -2894,7 +2821,7 @@
       }
     },
     {
-      "run_id": 34,
+      "run_id": 33,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2967,7 +2894,7 @@
       }
     },
     {
-      "run_id": 35,
+      "run_id": 34,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -2993,45 +2920,45 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 84.03688378500293,
-        "peak_poloidal_speed_mm_s": 0.10685656539974887,
-        "induced_B_torus_nT": 589919.7090070035,
+        "max_spin_rpm": 53.04848289794372,
+        "peak_poloidal_speed_mm_s": 0.05611583775285396,
+        "induced_B_torus_nT": 358137.84780511435,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.6771208966667679,
-        "lambda_m4": 1.006703496877001
+        "coherence_metric": 0.40821555384075325,
+        "lambda_m4": 1.0040413339830234
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.1002528812947607,
           "baseline_variance": 0.005250266018973088,
-          "peak_arrayed": 0.6771208966667679,
-          "steady_state_end_of_on": 0.6771208966667679,
-          "rise_time_s": 1.7,
-          "tau_decay_s": null,
-          "end_of_run": 0.405842001798131,
-          "residual_offset": 0.3055891205033703,
-          "memory_ratio": 0.5297383671138429
+          "peak_arrayed": 0.40821555384075325,
+          "steady_state_end_of_on": 0.40821555384075325,
+          "rise_time_s": 0.68,
+          "tau_decay_s": 1.48,
+          "end_of_run": 0.052680834619247136,
+          "residual_offset": -0.04757204667551357,
+          "memory_ratio": -0.15447341810039963
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 589919.7090070035,
-          "steady_state_end_of_on": 589919.7090070035,
-          "rise_time_s": 1.6600000000000001,
+          "peak_arrayed": 358137.84780511435,
+          "steady_state_end_of_on": 358137.84780511435,
+          "rise_time_s": 0.64,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -3040,7 +2967,7 @@
       }
     },
     {
-      "run_id": 36,
+      "run_id": 35,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3113,12 +3040,12 @@
       }
     },
     {
-      "run_id": 37,
+      "run_id": 36,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
         "tau_y": 0.04,
-        "K_visc": 0.08,
+        "K_visc": 0.04,
         "n_flow": 0.55,
         "eps_r": 220.0,
         "sigma": 100.0,
@@ -3135,49 +3062,49 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 12.0,
+        "V_drive": 96.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1.1750386212288852,
-        "peak_poloidal_speed_mm_s": 0.029936255492252452,
-        "induced_B_torus_nT": 957.9156977262559,
+        "max_spin_rpm": 84.03688378500293,
+        "peak_poloidal_speed_mm_s": 0.10685656539974887,
+        "induced_B_torus_nT": 589919.7090070035,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.37373935135773895,
-        "lambda_m4": 1.0037000195784416
+        "coherence_metric": 0.6771208966667679,
+        "lambda_m4": 1.006703496877001
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
-          "baseline_mean": 0.15480034783743615,
-          "baseline_variance": 0.012678082944244887,
-          "peak_arrayed": 0.28641540700461326,
-          "steady_state_end_of_on": 0.28641540700461326,
-          "rise_time_s": 0.0,
-          "tau_decay_s": 1.3800000000000001,
-          "end_of_run": 0.2118688415000639,
-          "residual_offset": 0.057068493662627756,
-          "memory_ratio": 0.433601550033416
+          "baseline_mean": 0.1002528812947607,
+          "baseline_variance": 0.005250266018973088,
+          "peak_arrayed": 0.6771208966667679,
+          "steady_state_end_of_on": 0.6771208966667679,
+          "rise_time_s": 1.7,
+          "tau_decay_s": 1.72,
+          "end_of_run": 0.08738347581056138,
+          "residual_offset": -0.01286940548419932,
+          "memory_ratio": -0.022309098686811708
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 957.9156977262559,
-          "steady_state_end_of_on": 957.9156977262559,
-          "rise_time_s": 0.0,
+          "peak_arrayed": 589919.7090070035,
+          "steady_state_end_of_on": 589919.7090070035,
+          "rise_time_s": 1.6600000000000001,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -3186,7 +3113,7 @@
       }
     },
     {
-      "run_id": 38,
+      "run_id": 37,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3259,7 +3186,7 @@
       }
     },
     {
-      "run_id": 39,
+      "run_id": 38,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3285,9 +3212,9 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 1.180104022360033,
+        "max_spin_rpm": 1.1750386212288852,
         "peak_poloidal_speed_mm_s": 0.029936255492252452,
-        "induced_B_torus_nT": 962.1916831013268,
+        "induced_B_torus_nT": 957.9156977262559,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
@@ -3300,29 +3227,29 @@
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.15480034783743615,
           "baseline_variance": 0.012678082944244887,
-          "peak_arrayed": 0.2877738588270646,
-          "steady_state_end_of_on": 0.2877738588270646,
+          "peak_arrayed": 0.28641540700461326,
+          "steady_state_end_of_on": 0.28641540700461326,
           "rise_time_s": 0.0,
           "tau_decay_s": 1.3800000000000001,
-          "end_of_run": 0.21287372324461243,
-          "residual_offset": 0.058073375407176275,
-          "memory_ratio": 0.4367289016810712
+          "end_of_run": 0.08575890740062575,
+          "residual_offset": -0.0690414404368104,
+          "memory_ratio": -0.5245709789873979
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 962.1916831013268,
-          "steady_state_end_of_on": 962.1916831013268,
+          "peak_arrayed": 957.9156977262559,
+          "steady_state_end_of_on": 957.9156977262559,
           "rise_time_s": 0.0,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
@@ -3332,7 +3259,7 @@
       }
     },
     {
-      "run_id": 40,
+      "run_id": 39,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3405,7 +3332,7 @@
       }
     },
     {
-      "run_id": 41,
+      "run_id": 40,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3427,49 +3354,49 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 48.0,
+        "V_drive": 12.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 16.158995656148928,
-        "peak_poloidal_speed_mm_s": 0.04554979178195165,
-        "induced_B_torus_nT": 54031.47762874697,
+        "max_spin_rpm": 1.180104022360033,
+        "peak_poloidal_speed_mm_s": 0.029936255492252452,
+        "induced_B_torus_nT": 962.1916831013268,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.5197516008028641,
-        "lambda_m4": 1.0051455408479484
+        "coherence_metric": 0.37373935135773895,
+        "lambda_m4": 1.0037000195784416
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.15480034783743615,
           "baseline_variance": 0.012678082944244887,
-          "peak_arrayed": 0.5197516008028641,
-          "steady_state_end_of_on": 0.5197516008028641,
-          "rise_time_s": 0.66,
-          "tau_decay_s": null,
-          "end_of_run": 0.38447362410267555,
-          "residual_offset": 0.2296732762652394,
-          "memory_ratio": 0.6293259014704533
+          "peak_arrayed": 0.2877738588270646,
+          "steady_state_end_of_on": 0.2877738588270646,
+          "rise_time_s": 0.0,
+          "tau_decay_s": 1.3800000000000001,
+          "end_of_run": 0.08616565697205467,
+          "residual_offset": -0.06863469086538149,
+          "memory_ratio": -0.5161531071457894
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 54031.47762874697,
-          "steady_state_end_of_on": 54031.47762874697,
-          "rise_time_s": 0.6,
+          "peak_arrayed": 962.1916831013268,
+          "steady_state_end_of_on": 962.1916831013268,
+          "rise_time_s": 0.0,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -3478,7 +3405,7 @@
       }
     },
     {
-      "run_id": 42,
+      "run_id": 41,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3551,7 +3478,7 @@
       }
     },
     {
-      "run_id": 43,
+      "run_id": 42,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3577,45 +3504,45 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 24.705497728403337,
-        "peak_poloidal_speed_mm_s": 0.08253104366478942,
-        "induced_B_torus_nT": 85197.27455848137,
+        "max_spin_rpm": 16.158995656148928,
+        "peak_poloidal_speed_mm_s": 0.04554979178195165,
+        "induced_B_torus_nT": 54031.47762874697,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.8291116233433999,
-        "lambda_m4": 1.0082082050710997
+        "coherence_metric": 0.5197516008028641,
+        "lambda_m4": 1.0051455408479484
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.15480034783743615,
           "baseline_variance": 0.012678082944244887,
-          "peak_arrayed": 0.8291116233433999,
-          "steady_state_end_of_on": 0.8291116233433999,
-          "rise_time_s": 1.72,
-          "tau_decay_s": null,
-          "end_of_run": 0.6133151877167491,
-          "residual_offset": 0.45851483987931296,
-          "memory_ratio": 0.6799750449601635
+          "peak_arrayed": 0.5197516008028641,
+          "steady_state_end_of_on": 0.5197516008028641,
+          "rise_time_s": 0.66,
+          "tau_decay_s": 2.2800000000000002,
+          "end_of_run": 0.1556247614984685,
+          "residual_offset": 0.000824413661032336,
+          "memory_ratio": 0.002258969257766689
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 85197.27455848137,
-          "steady_state_end_of_on": 85197.27455848137,
-          "rise_time_s": 1.6400000000000001,
+          "peak_arrayed": 54031.47762874697,
+          "steady_state_end_of_on": 54031.47762874697,
+          "rise_time_s": 0.6,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -3624,7 +3551,7 @@
       }
     },
     {
-      "run_id": 44,
+      "run_id": 43,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3697,7 +3624,7 @@
       }
     },
     {
-      "run_id": 45,
+      "run_id": 44,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3719,49 +3646,49 @@
         "euler_pitch": 1.25,
         "theta_tilt_rad": 0.45,
         "omega_7_scale": 1.0,
-        "V_drive": 96.0,
+        "V_drive": 48.0,
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 80.53735644018079,
-        "peak_poloidal_speed_mm_s": 0.10067916699065076,
-        "induced_B_torus_nT": 562910.6169497338,
+        "max_spin_rpm": 24.705497728403337,
+        "peak_poloidal_speed_mm_s": 0.08253104366478942,
+        "induced_B_torus_nT": 85197.27455848137,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 0.969254105804319,
-        "lambda_m4": 1.0095956156474628
+        "coherence_metric": 0.8291116233433999,
+        "lambda_m4": 1.0082082050710997
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 40,
-          "n_off": 80,
-          "total_steps": 160,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
           "t_pre_s": 0.8,
-          "t_on_s": 0.8,
-          "t_off_s": 1.6
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.15480034783743615,
           "baseline_variance": 0.012678082944244887,
-          "peak_arrayed": 0.969254105804319,
-          "steady_state_end_of_on": 0.969254105804319,
-          "rise_time_s": 0.7000000000000001,
-          "tau_decay_s": null,
-          "end_of_run": 0.7169821856428056,
-          "residual_offset": 0.5621818378053695,
-          "memory_ratio": 0.6902563003806887
+          "peak_arrayed": 0.8291116233433999,
+          "steady_state_end_of_on": 0.8291116233433999,
+          "rise_time_s": 1.72,
+          "tau_decay_s": 2.7600000000000002,
+          "end_of_run": 0.2482537782261964,
+          "residual_offset": 0.09345343038876025,
+          "memory_ratio": 0.13859093534901704
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 562910.6169497338,
-          "steady_state_end_of_on": 562910.6169497338,
-          "rise_time_s": 0.68,
+          "peak_arrayed": 85197.27455848137,
+          "steady_state_end_of_on": 85197.27455848137,
+          "rise_time_s": 1.6400000000000001,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -3770,7 +3697,7 @@
       }
     },
     {
-      "run_id": 46,
+      "run_id": 45,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3843,7 +3770,7 @@
       }
     },
     {
-      "run_id": 47,
+      "run_id": 46,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3869,45 +3796,45 @@
         "f_drive": 0.0
       },
       "metrics": {
-        "max_spin_rpm": 148.00517228384933,
-        "peak_poloidal_speed_mm_s": 0.23601029361974207,
-        "induced_B_torus_nT": 1121034.5983285604,
+        "max_spin_rpm": 80.53735644018079,
+        "peak_poloidal_speed_mm_s": 0.10067916699065076,
+        "induced_B_torus_nT": 562910.6169497338,
         "M6_trace_abs": 0.0,
         "M6_gauge_invariant_TrM2": 0.5215,
         "yee_3iI_to_3R_ratio": 24.05,
         "alpha_inv_ref": 137.035999084,
         "alpha_harmonic_alignment": 0.1755,
-        "coherence_metric": 1.8929760714559005,
-        "lambda_m4": 1.0187404631074135
+        "coherence_metric": 0.969254105804319,
+        "lambda_m4": 1.0095956156474628
       },
       "transitions": {
         "schedule": {
           "dt": 0.02,
           "n_pre": 40,
-          "n_on": 100,
-          "n_off": 80,
-          "total_steps": 220,
+          "n_on": 40,
+          "n_off": 320,
+          "total_steps": 400,
           "t_pre_s": 0.8,
-          "t_on_s": 2.0,
-          "t_off_s": 1.6
+          "t_on_s": 0.8,
+          "t_off_s": 6.4
         },
         "coherence_metric": {
           "baseline_mean": 0.15480034783743615,
           "baseline_variance": 0.012678082944244887,
-          "peak_arrayed": 1.8929760714559005,
-          "steady_state_end_of_on": 1.8929760714559005,
-          "rise_time_s": 1.74,
-          "tau_decay_s": null,
-          "end_of_run": 1.4002830763927583,
-          "residual_offset": 1.245482728555322,
-          "memory_ratio": 0.7165459231949957
+          "peak_arrayed": 0.969254105804319,
+          "steady_state_end_of_on": 0.969254105804319,
+          "rise_time_s": 0.7000000000000001,
+          "tau_decay_s": 2.88,
+          "end_of_run": 0.2902154390947613,
+          "residual_offset": 0.13541509125732512,
+          "memory_ratio": 0.16626492287955202
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
           "baseline_variance": 0.0,
-          "peak_arrayed": 1121034.5983285604,
-          "steady_state_end_of_on": 1121034.5983285604,
-          "rise_time_s": 1.74,
+          "peak_arrayed": 562910.6169497338,
+          "steady_state_end_of_on": 562910.6169497338,
+          "rise_time_s": 0.68,
           "tau_decay_s": 0.0,
           "end_of_run": 0.0,
           "residual_offset": 0.0,
@@ -3916,7 +3843,7 @@
       }
     },
     {
-      "run_id": 48,
+      "run_id": 47,
       "gel": {
         "name": "cnc_batio3_fe3o4_chiral_gel",
         "rho": 1015.0,
@@ -3974,6 +3901,79 @@
           "end_of_run": 1.0358253987457477,
           "residual_offset": 0.8810250509083116,
           "memory_ratio": 0.5068676537917749
+        },
+        "induced_B_torus_nT": {
+          "baseline_mean": 0.0,
+          "baseline_variance": 0.0,
+          "peak_arrayed": 1121034.5983285604,
+          "steady_state_end_of_on": 1121034.5983285604,
+          "rise_time_s": 1.74,
+          "tau_decay_s": 0.0,
+          "end_of_run": 0.0,
+          "residual_offset": 0.0,
+          "memory_ratio": 0.0
+        }
+      }
+    },
+    {
+      "run_id": 48,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.04,
+        "K_visc": 0.08,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 96.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 148.00517228384933,
+        "peak_poloidal_speed_mm_s": 0.23601029361974207,
+        "induced_B_torus_nT": 1121034.5983285604,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.5215,
+        "yee_3iI_to_3R_ratio": 24.05,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.1755,
+        "coherence_metric": 1.8929760714559005,
+        "lambda_m4": 1.0187404631074135
+      },
+      "transitions": {
+        "schedule": {
+          "dt": 0.02,
+          "n_pre": 40,
+          "n_on": 100,
+          "n_off": 320,
+          "total_steps": 460,
+          "t_pre_s": 0.8,
+          "t_on_s": 2.0,
+          "t_off_s": 6.4
+        },
+        "coherence_metric": {
+          "baseline_mean": 0.15480034783743615,
+          "baseline_variance": 0.012678082944244887,
+          "peak_arrayed": 1.8929760714559005,
+          "steady_state_end_of_on": 1.8929760714559005,
+          "rise_time_s": 1.74,
+          "tau_decay_s": 3.2600000000000002,
+          "end_of_run": 0.5667975802047963,
+          "residual_offset": 0.4119972323673602,
+          "memory_ratio": 0.237028527535571
         },
         "induced_B_torus_nT": {
           "baseline_mean": 0.0,
