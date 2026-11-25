@@ -1,0 +1,732 @@
+{
+  "total_runs": 12,
+  "summary_stats": {
+    "max_spin_rpm": {
+      "mean": 443.1908908359869,
+      "variance": 212220.47701911087,
+      "min": 16.410722362572532,
+      "max": 1050.6596924279438
+    },
+    "peak_poloidal_speed_mm_s": {
+      "mean": 5.399721472802715,
+      "variance": 52.785771014139776,
+      "min": 0.005455274310535124,
+      "max": 15.224644454157666
+    },
+    "induced_B_torus_nT": {
+      "mean": 41599.09385934579,
+      "variance": 2641189091.188233,
+      "min": 216.2460611576069,
+      "max": 110755.11556029938
+    },
+    "M6_trace_abs": {
+      "mean": 0.0,
+      "variance": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "M6_gauge_invariant_TrM2": {
+      "mean": 0.5079830002254231,
+      "variance": 0.0003350891757912313,
+      "min": 0.4832270917173658,
+      "max": 0.5215596092380814
+    },
+    "yee_3iI_to_3R_ratio": {
+      "mean": 23.9892314416759,
+      "variance": 0.0075337036901940565,
+      "min": 23.871730360540948,
+      "max": 24.05498210154746
+    },
+    "alpha_inv_ref": {
+      "mean": 137.035999084,
+      "variance": 0.0,
+      "min": 137.035999084,
+      "max": 137.035999084
+    },
+    "alpha_harmonic_alignment": {
+      "mean": 0.17505787969605743,
+      "variance": 4.011799260584179e-07,
+      "min": 0.1742004328797436,
+      "max": 0.1755376854428032
+    },
+    "coherence_metric": {
+      "mean": 44.407557919981485,
+      "variance": 1798.8977365113997,
+      "min": 0.7467763719077636,
+      "max": 100.0
+    },
+    "lambda_m4": {
+      "mean": 1.4342865988898916,
+      "variance": 0.17968929088451072,
+      "min": 1.0,
+      "max": 1.99
+    }
+  },
+  "top_5_by_coherence": [
+    {
+      "run_id": 3,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.04,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 96.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 1050.6596924279438,
+        "peak_poloidal_speed_mm_s": 15.224644454157666,
+        "induced_B_torus_nT": 110755.11556029938,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.4832270917173658,
+        "yee_3iI_to_3R_ratio": 23.872130829884227,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.17420335524573471,
+        "coherence_metric": 100.0,
+        "lambda_m4": 1.99
+      }
+    },
+    {
+      "run_id": 6,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.08,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 96.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 1050.6332711574958,
+        "peak_poloidal_speed_mm_s": 15.223911378515929,
+        "induced_B_torus_nT": 110751.9103182244,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.48322900281484016,
+        "yee_3iI_to_3R_ratio": 23.872148421146537,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.17420348361537794,
+        "coherence_metric": 100.0,
+        "lambda_m4": 1.99
+      }
+    },
+    {
+      "run_id": 12,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.04,
+        "K_visc": 0.08,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 96.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 1050.405350810129,
+        "peak_poloidal_speed_mm_s": 15.217833342535771,
+        "induced_B_torus_nT": 110722.36616668655,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.48324548677496343,
+        "yee_3iI_to_3R_ratio": 23.871747966379587,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.17420056135575543,
+        "coherence_metric": 95.49984420924075,
+        "lambda_m4": 1.9449984420924076
+      }
+    },
+    {
+      "run_id": 5,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.08,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 48.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 262.65480751289783,
+        "peak_poloidal_speed_mm_s": 0.9726790958935507,
+        "induced_B_torus_nT": 13843.940117644532,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.519152589482869,
+        "yee_3iI_to_3R_ratio": 24.041349762966735,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.1754382054618358,
+        "coherence_metric": 94.95072229754581,
+        "lambda_m4": 1.939507222975458
+      }
+    },
+    {
+      "run_id": 9,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.04,
+        "K_visc": 0.04,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 96.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 1050.4317656345818,
+        "peak_poloidal_speed_mm_s": 15.218566121060567,
+        "induced_B_torus_nT": 110725.5703843226,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.4832435765433613,
+        "yee_3iI_to_3R_ratio": 23.871730360540948,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.1742004328797436,
+        "coherence_metric": 47.79882630415499,
+        "lambda_m4": 1.46798826304155
+      }
+    }
+  ],
+  "runs": [
+    {
+      "run_id": 1,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.04,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 12.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 16.416043786159676,
+        "peak_poloidal_speed_mm_s": 0.005458179761691391,
+        "induced_B_torus_nT": 216.31621464017712,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.5215596031158842,
+        "yee_3iI_to_3R_ratio": 24.053501629522632,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.1755268819164691,
+        "coherence_metric": 2.9790530970256572,
+        "lambda_m4": 1.0197905309702566
+      }
+    },
+    {
+      "run_id": 2,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.04,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 48.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 262.66210277632825,
+        "peak_poloidal_speed_mm_s": 0.9727327885804936,
+        "induced_B_torus_nT": 13844.35190027459,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.5191524553218815,
+        "yee_3iI_to_3R_ratio": 24.0412642171867,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.1754375812041181,
+        "coherence_metric": 47.665829900307806,
+        "lambda_m4": 1.466658299003078
+      }
+    },
+    {
+      "run_id": 3,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.04,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 96.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 1050.6596924279438,
+        "peak_poloidal_speed_mm_s": 15.224644454157666,
+        "induced_B_torus_nT": 110755.11556029938,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.4832270917173658,
+        "yee_3iI_to_3R_ratio": 23.872130829884227,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.17420335524573471,
+        "coherence_metric": 100.0,
+        "lambda_m4": 1.99
+      }
+    },
+    {
+      "run_id": 4,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.08,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 12.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 16.415534080130953,
+        "peak_poloidal_speed_mm_s": 0.005457901436206465,
+        "induced_B_torus_nT": 216.3094950488163,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.5215596037023773,
+        "yee_3iI_to_3R_ratio": 24.053643406884593,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.17552791651586563,
+        "coherence_metric": 5.934278654815309,
+        "lambda_m4": 1.049342786548153
+      }
+    },
+    {
+      "run_id": 5,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.08,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 48.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 262.65480751289783,
+        "peak_poloidal_speed_mm_s": 0.9726790958935507,
+        "induced_B_torus_nT": 13843.940117644532,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.519152589482869,
+        "yee_3iI_to_3R_ratio": 24.041349762966735,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.1754382054618358,
+        "coherence_metric": 94.95072229754581,
+        "lambda_m4": 1.939507222975458
+      }
+    },
+    {
+      "run_id": 6,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.01,
+        "K_visc": 0.08,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 96.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 1050.6332711574958,
+        "peak_poloidal_speed_mm_s": 15.223911378515929,
+        "induced_B_torus_nT": 110751.9103182244,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.48322900281484016,
+        "yee_3iI_to_3R_ratio": 23.872148421146537,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.17420348361537794,
+        "coherence_metric": 100.0,
+        "lambda_m4": 1.99
+      }
+    },
+    {
+      "run_id": 7,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.04,
+        "K_visc": 0.04,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 12.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 16.411231896902677,
+        "peak_poloidal_speed_mm_s": 0.0054555524814610375,
+        "induced_B_torus_nT": 216.25277843320785,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.5215596086519577,
+        "yee_3iI_to_3R_ratio": 24.054840316287674,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.17553665078577343,
+        "coherence_metric": 0.7467763719077636,
+        "lambda_m4": 1.0
+      }
+    },
+    {
+      "run_id": 8,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.04,
+        "K_visc": 0.04,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 48.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 262.5987305387598,
+        "peak_poloidal_speed_mm_s": 0.9722586259194519,
+        "induced_B_torus_nT": 13840.579484962014,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.519153620622697,
+        "yee_3iI_to_3R_ratio": 24.041676355102393,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.17544058871979606,
+        "coherence_metric": 11.949287444797505,
+        "lambda_m4": 1.109492874447975
+      }
+    },
+    {
+      "run_id": 9,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.04,
+        "K_visc": 0.04,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 96.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 1050.4317656345818,
+        "peak_poloidal_speed_mm_s": 15.218566121060567,
+        "induced_B_torus_nT": 110725.5703843226,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.4832435765433613,
+        "yee_3iI_to_3R_ratio": 23.871730360540948,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.1742004328797436,
+        "coherence_metric": 47.79882630415499,
+        "lambda_m4": 1.46798826304155
+      }
+    },
+    {
+      "run_id": 10,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.04,
+        "K_visc": 0.08,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 12.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 16.410722362572532,
+        "peak_poloidal_speed_mm_s": 0.005455274310535124,
+        "induced_B_torus_nT": 216.2460611576069,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.5215596092380814,
+        "yee_3iI_to_3R_ratio": 24.05498210154746,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.1755376854428032,
+        "coherence_metric": 1.492015846813856,
+        "lambda_m4": 1.0049201584681386
+      }
+    },
+    {
+      "run_id": 11,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.04,
+        "K_visc": 0.08,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 48.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 262.59143704794127,
+        "peak_poloidal_speed_mm_s": 0.9722049589792446,
+        "induced_B_torus_nT": 13840.167830455533,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.5191537547187977,
+        "yee_3iI_to_3R_ratio": 24.041761932661384,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.17544121320941602,
+        "coherence_metric": 23.8740609131684,
+        "lambda_m4": 1.228740609131684
+      }
+    },
+    {
+      "run_id": 12,
+      "gel": {
+        "name": "cnc_batio3_fe3o4_chiral_gel",
+        "rho": 1015.0,
+        "tau_y": 0.04,
+        "K_visc": 0.08,
+        "n_flow": 0.55,
+        "eps_r": 220.0,
+        "sigma": 100.0,
+        "chi_mag": 0.00012,
+        "gamma_chiral": -0.5,
+        "poloidal_gain": 2.0
+      },
+      "magnet": {
+        "name": "anti_helmholtz_euler_cusp",
+        "R_cell": 0.025,
+        "H_cell": 0.08,
+        "B_ring": 0.18,
+        "z_sep": 0.045,
+        "euler_pitch": 1.25,
+        "theta_tilt_rad": 0.45,
+        "omega_7_scale": 1.0,
+        "V_drive": 96.0,
+        "f_drive": 0.0
+      },
+      "metrics": {
+        "max_spin_rpm": 1050.405350810129,
+        "peak_poloidal_speed_mm_s": 15.217833342535771,
+        "induced_B_torus_nT": 110722.36616668655,
+        "M6_trace_abs": 0.0,
+        "M6_gauge_invariant_TrM2": 0.48324548677496343,
+        "yee_3iI_to_3R_ratio": 23.871747966379587,
+        "alpha_inv_ref": 137.035999084,
+        "alpha_harmonic_alignment": 0.17420056135575543,
+        "coherence_metric": 95.49984420924075,
+        "lambda_m4": 1.9449984420924076
+      }
+    }
+  ]
+}
