@@ -1,14 +1,16 @@
 {
   "gel": {
+    "rho": [1015.0, 6400.0],
     "tau_y": [0.01],
+    "K_visc": [0.08],
     "eps_r": [220.0],
-    "sigma": [0.25, 1.0, 5.0],
+    "sigma": [0.25, 100.0],
     "gamma_chiral": [-0.5],
     "poloidal_gain": [2.0]
   },
   "magnet": {
     "theta_tilt_rad": [0.45],
-    "V_drive": [24.0, 48.0, 96.0],
-    "f_drive": [0.0]
+    "V_drive": [24.0, 96.0],
+    "f_drive": [0.0, 50.0]
   }
 }
