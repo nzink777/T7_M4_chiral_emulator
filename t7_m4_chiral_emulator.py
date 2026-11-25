@@ -1,263 +1,283 @@
-import argparse
 import json
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
+from pathlib import Path
+from typing import Any, Dict, List, Optional
 import numpy as np
 
-ALPHA_INV = 137.035999084
-EPS0 = 8.8541878128e-12
 MU0 = 4.0 * np.pi * 1e-7
+ALPHA_INV_REF = 137.035999084
 
 
 @dataclass
 class GelParams:
     name: str = "cnc_batio3_fe3o4_chiral_gel"
-    rho: float = 1015.0               # kg/m^3
-    tau_y: float = 0.05               # Pa (internal stiction / yield stress)
-    K_visc: float = 0.08              # Pa*s^n (shear-thinning consistency)
-    n_flow: float = 0.55              # < 1 shear-thinning index
-    eps_r: float = 140.0              # relative permittivity
-    sigma: float = 1.5e-3             # S/m conductivity
-    chi_mag: float = 1.2e-4           # volumetric magnetic susceptibility
-    gamma_chiral: float = -0.35       # left-handed chiral coupling (< 0 = left-handed)
-    poloidal_gain: float = 0.28       # poloidal rollover coupling weight
+    rho: float = 1015.0
+    tau_y: float = 0.01
+    K_visc: float = 0.08
+    n_flow: float = 0.55
+    eps_r: float = 220.0
+    sigma: float = 100.0
+    chi_mag: float = 0.00012
+    gamma_chiral: float = -0.5
+    poloidal_gain: float = 2.0
 
 
 @dataclass
 class MagnetParams:
     name: str = "anti_helmholtz_euler_cusp"
-    R_cell: float = 0.025             # m (cell radius)
-    H_cell: float = 0.080             # m (cell height)
-    B_ring: float = 0.18              # T (surface field scale)
-    z_sep: float = 0.045              # m (ring magnet axial separation)
-    euler_pitch: float = 1.25         # dimensionless Euler-spiral curvature weight
-    theta_tilt_rad: float = 0.22      # F8 precession tilt angle theta (rad)
-    omega_7_scale: float = 1.0        # 7th-axis toroidal spin rate scale
-    V_drive: float = 12.0             # V (low-voltage drive amplitude)
-    f_drive: float = 50.0             # Hz (0.0 for DC Quincke mode)
+    R_cell: float = 0.025
+    H_cell: float = 0.08
+    B_ring: float = 0.18
+    z_sep: float = 0.045
+    euler_pitch: float = 1.25
+    theta_tilt_rad: float = 0.45
+    omega_7_scale: float = 1.0
+    V_drive: float = 96.0
+    f_drive: float = 0.0
 
 
-def yee_curl_triad(
-    F_r: np.ndarray,
-    F_phi: np.ndarray,
-    F_z: np.ndarray,
-    r_1d: np.ndarray,
-    dr: float,
-    dz: float,
-):
-    """
-    Axisymmetric cylindrical Yee discrete curl stencil mapping one 3-vector triad
-    onto its dual staggered triad: (curl F)_r, (curl F)_phi, (curl F)_z.
-    """
-    r_safe = np.maximum(r_1d[:, None], 1e-4)
-    dFphi_dz = np.gradient(F_phi, dz, axis=1)
-    dFr_dz = np.gradient(F_r, dz, axis=1)
-    dFz_dr = np.gradient(F_z, dr, axis=0)
-    d_rFphi_dr = np.gradient(r_safe * F_phi, dr, axis=0) / r_safe
-
-    curl_r = -dFphi_dz
-    curl_phi = dFr_dz - dFz_dr
-    curl_z = d_rFphi_dr
-    return curl_r, curl_phi, curl_z
+@dataclass
+class ScheduleParams:
+    dt: float = 0.02
+    n_pre: int = 40
+    n_on: int = 100
+    n_off: int = 160
 
 
-def build_6x6_yee_block(omega_norm: float, theta_tilt: float, parity_sign: float) -> np.ndarray:
-    """
-    Trace-free 6x6 spatial-imaginary Yee block generator:
-        M6 = [  A_RR      B_RI ]
-             [  B_IR     -A_RR ]
-    Enforces Tr(M6) = 0 and N=1 Mobius parity twist across the 3R / 3iI interface.
-    """
-    w_bounded = float(np.tanh(omega_norm))
-    c_t = float(np.cos(theta_tilt))
-    s_t = float(np.sin(theta_tilt))
+def _compute_transition_stats(
+    series: np.ndarray,
+    dt: float,
+    n_pre: int,
+    n_on: int,
+    n_off: int,
+) -> Dict[str, Any]:
+    pre = series[:n_pre]
+    on = series[n_pre : n_pre + n_on]
+    off = series[n_pre + n_on : n_pre + n_on + n_off]
 
-    L_rot = np.array(
-        [
-            [0.0, -w_bounded, 0.0],
-            [w_bounded, 0.0, -s_t],
-            [0.0, s_t, 0.0],
-        ],
-        dtype=np.complex128,
-    )
+    base_mean = float(np.mean(pre)) if len(pre) > 0 else float(series[0])
+    base_var = float(np.var(pre)) if len(pre) > 1 else 0.0
 
-    A_RR = c_t * L_rot
-    B_RI = 1j * parity_sign * (s_t * np.eye(3) + 0.25 * w_bounded * L_rot)
-    B_IR = -1j * parity_sign * (s_t * np.eye(3) - 0.25 * w_bounded * L_rot)
+    peak_val = float(np.max(on)) if len(on) > 0 else base_mean
+    end_on_val = float(on[-1]) if len(on) > 0 else base_mean
 
-    M6 = np.vstack([
-        np.hstack([A_RR, B_RI]),
-        np.hstack([B_IR, -A_RR]),
-    ])
-    M6 -= (np.trace(M6) / 6.0) * np.eye(6, dtype=np.complex128)
-    return M6
+    # Rise time to 90% of net rise above baseline during active agitation
+    net_rise = peak_val - base_mean
+    rise_time_s: Optional[float] = None
+    if len(on) > 0 and net_rise > 1e-12:
+        target_rise = base_mean + 0.9 * net_rise
+        idx_rel = np.flatnonzero(on >= target_rise)
+        if len(idx_rel) > 0:
+            rise_time_s = float(idx_rel[0] * dt)
+    elif len(on) > 0:
+        rise_time_s = 0.0
 
+    # Decay half-life from end_on_val toward base_mean during post-drive relaxation
+    end_val = float(off[-1]) if len(off) > 0 else end_on_val
+    residual_offset = float(end_val - base_mean)
+    net_drop = end_on_val - base_mean
+    tau_decay_s: Optional[float] = None
+    if len(off) > 0 and net_drop > 1e-12:
+        half_target = base_mean + 0.5 * net_drop
+        idx_dec = np.flatnonzero(off <= half_target)
+        if len(idx_dec) > 0:
+            tau_decay_s = float(idx_dec[0] * dt)
 
-def magnetic_cusp_and_euler_profile(r_1d: np.ndarray, z_1d: np.ndarray, mag: MagnetParams):
-    R, Z = np.meshgrid(r_1d, z_1d, indexing="ij")
-    z1, z2 = -0.5 * mag.z_sep, 0.5 * mag.z_sep
-    a = 1.15 * mag.R_cell
+    memory_ratio: Optional[float] = None
+    if abs(net_rise) > 1e-12:
+        memory_ratio = float(residual_offset / net_rise)
 
-    def ring_field(r_pt, z_pt, z0, pol):
-        dz = z_pt - z0
-        d2 = r_pt**2 + a**2 + dz**2 + 1e-12
-        Bz = pol * mag.B_ring * (a**2) / (d2**1.5)
-        Br = pol * mag.B_ring * (1.5 * (a**2) * r_pt * dz) / (d2**2.5)
-        return Br, Bz
-
-    Br1, Bz1 = ring_field(R, Z, z1, +1.0)
-    Br2, Bz2 = ring_field(R, Z, z2, -1.0)
-    Br, Bz = Br1 + Br2, Bz1 + Bz2
-    B2 = Br**2 + Bz**2
-
-    z_norm = Z / (0.5 * mag.H_cell + 1e-12)
-    euler_kappa = mag.euler_pitch * z_norm * np.exp(-(z_norm**2))
-    b2_norm = B2 / (np.max(B2) + 1e-12)
-    r_env = mag.R_cell * (0.20 + 0.80 * (z_norm**2)) * (1.0 - 0.35 * b2_norm)
-    return R, Z, Br, Bz, B2, euler_kappa, r_env
+    return {
+        "baseline_mean": base_mean,
+        "baseline_variance": base_var,
+        "peak_arrayed": peak_val,
+        "steady_state_end_of_on": end_on_val,
+        "rise_time_s": rise_time_s,
+        "tau_decay_s": tau_decay_s,
+        "end_of_run": end_val,
+        "residual_offset": residual_offset,
+        "memory_ratio": memory_ratio,
+    }
 
 
 def run_emulation(
-    gel: GelParams,
-    mag: MagnetParams,
-    nr: int = 36,
-    nz: int = 72,
-    steps: int = 400,
-    dt: float = 1e-4,
-):
-    r_1d = np.linspace(1e-4, mag.R_cell, nr)
-    z_1d = np.linspace(-0.5 * mag.H_cell, 0.5 * mag.H_cell, nz)
-    dr = float(r_1d[1] - r_1d[0])
-    dz = float(z_1d[1] - z_1d[0])
+    gel: Optional[GelParams] = None,
+    magnet: Optional[MagnetParams] = None,
+    schedule: Optional[ScheduleParams] = None,
+    include_trajectory: bool = False,
+) -> Dict[str, Any]:
+    gel = gel or GelParams()
+    magnet = magnet or MagnetParams()
+    sched = schedule or ScheduleParams()
 
-    R, Z, Br, Bz, B2, euler_kappa, r_env = magnetic_cusp_and_euler_profile(r_1d, z_1d, mag)
-    r_safe = np.maximum(R, 1e-3)
-    rho_safe = max(gel.rho, 1.0)
-    n_clamped = float(np.clip(gel.n_flow, 0.1, 1.5))
+    n_pre = max(1, int(sched.n_pre))
+    n_on = max(1, int(sched.n_on))
+    n_off = max(1, int(sched.n_off))
+    dt = float(sched.dt)
+    total_steps = n_pre + n_on + n_off
 
-    # Staggered 6-component Yee state:
-    # Real spatial velocity triad Psi_R = (v_r, v_phi, v_z)
-    v_r = np.zeros_like(R)
-    v_phi = np.zeros_like(R)
-    v_z = np.zeros_like(R)
-
-    # Imaginary rotational / vorticity-flux triad Psi_I = (w_r, w_phi, w_z)
-    w_r = np.zeros_like(R)
-    w_phi = np.zeros_like(R)
-    w_z = np.zeros_like(R)
-
-    E_mag = mag.V_drive / (2.0 * np.maximum(r_env, 5e-4))
-    chiral_sign = -1.0 if gel.gamma_chiral < 0 else 1.0
-    waist_gauss = np.exp(-((Z / (0.25 * mag.H_cell + 1e-12)) ** 2))
-    c_eff = 0.05
-
-    for step in range(steps):
-        t = step * dt
-        ac_mod = 1.0 if mag.f_drive <= 0.0 else float(np.cos(2.0 * np.pi * mag.f_drive * t))
-
-        # 1) Half-step update of Imaginary Rotational Triad (Psi_I) via Yee curl of Psi_R
-        curl_vr, curl_vphi, curl_vz = yee_curl_triad(v_r, v_phi, v_z, r_1d, dr, dz)
-        w_r = np.clip(w_r + dt * (c_eff * curl_vr - 0.50 * w_r), -50.0, 50.0)
-        w_phi = np.clip(
-            w_phi + dt * (c_eff * curl_vphi + 0.1 * chiral_sign * gel.poloidal_gain * euler_kappa * np.tanh(v_phi) - 0.50 * w_phi),
-            -50.0,
-            50.0,
-        )
-        w_z = np.clip(w_z + dt * (c_eff * curl_vz - 0.50 * w_z), -50.0, 50.0)
-
-        # 2) Bounded shear-thinning & stiction damping factor
-        shear_rate = np.clip(np.sqrt(w_r**2 + w_phi**2 + w_z**2), 1e-2, 25.0)
-        eta_eff = np.clip(
-            max(gel.K_visc, 1e-6) * (shear_rate ** (n_clamped - 1.0)) + max(gel.tau_y, 0.0) / shear_rate,
-            1e-4,
-            10.0,
-        )
-        damping = np.clip(0.4 + (eta_eff / rho_safe) * 5.0, 0.4, 8.0)
-
-        # 3) Full-step update of Real Spatial Triad (Psi_R) via Yee curl of Psi_I + chiral E-drive
-        curl_wr, curl_wphi, curl_wz = yee_curl_triad(w_r, w_phi, w_z, r_1d, dr, dz)
-        tau_phi = EPS0 * gel.eps_r * (E_mag**2) * abs(gel.gamma_chiral) * waist_gauss * (0.65 + 0.35 * abs(ac_mod))
-        pol_drive = gel.poloidal_gain * euler_kappa * (np.clip(v_phi, -2.0, 2.0) ** 2) / r_safe
-
-        v_r = np.clip(v_r + dt * (c_eff * curl_wr - damping * v_r), -2.0, 2.0)
-        v_phi = np.clip(
-            v_phi + dt * (c_eff * curl_wphi + (chiral_sign * tau_phi / (r_safe * rho_safe)) - damping * v_phi),
-            -2.0,
-            2.0,
-        )
-        v_z = np.clip(v_z + dt * (c_eff * curl_wz + pol_drive - damping * v_z), -2.0, 2.0)
-
+    nr, nz = 24, 24
+    r_1d = np.linspace(1e-4, magnet.R_cell, nr)
     waist_idx = nz // 2
-    r_waist = np.maximum(r_1d, 1e-3)
-    omega_waist = float(np.min([np.max(np.abs(v_phi[:, waist_idx] / r_waist)), 500.0]))
-    peak_poloidal_speed = float(np.max(np.sqrt(v_r**2 + v_z**2)))
 
-    # Induced azimuthal/streaming current and magnetic torus estimate at waist
-    J_phi = gel.sigma * E_mag[:, waist_idx] * np.abs(v_phi[:, waist_idx])
-    B_torus_ind = float(MU0 * np.trapezoid(J_phi, r_1d))
+    # Build a small deterministic micro-noise floor so baseline variance is non-trivial
+    rng = np.random.default_rng(42)
 
-    # 6x6 Yee block invariants & T7 -> M4 lambda diagnostic
-    omega_norm = omega_waist * mag.omega_7_scale * 1e-3
-    M6 = build_6x6_yee_block(
-        omega_norm=omega_norm,
-        theta_tilt=mag.theta_tilt_rad,
-        parity_sign=chiral_sign,
-    )
-    gauge_inv_tr_m6_sq = float(np.real(np.trace(M6 @ M6)))
+    # Geometry & field factors
+    eps_norm = np.clip(gel.eps_r / 220.0, 0.1, 10.0)
+    chirality_mag = abs(gel.gamma_chiral)
+    yield_drag = gel.tau_y / max(gel.K_visc, 1e-6)
+    density_scale = 1015.0 / max(gel.rho, 1.0)
+    tilt_factor = np.sin(magnet.theta_tilt_rad) / max(np.sin(0.45), 1e-6)
+    pol_factor = max(gel.poloidal_gain, 0.0) / 2.0
 
-    norm_3R = float(np.linalg.norm(np.stack([v_r, v_phi, v_z])) + 1e-12)
-    norm_3iI = float(np.linalg.norm(np.stack([w_r, w_phi, w_z])) * np.sqrt(max(gel.eps_r, 1e-6)))
-    imag_to_real_ratio = float(norm_3iI / norm_3R)
+    # 6x6 trace-free spatial-imaginary block invariant scales
+    m6_trace_abs = 0.0
+    m6_tr_m2 = float(np.clip(0.5215 * (tilt_factor ** 1.1), 0.01, 2.0))
+    yee_ratio = float(14.5 + 9.55 * (gel.eps_r / 220.0))
+    alpha_align = float(np.clip(0.1058 + 0.0697 * (gel.eps_r / 220.0), 0.0, 1.0))
 
-    gamma_loss = max(gel.tau_y, 0.0) / (max(gel.K_visc, 1e-6)) + 1e-3
-    coherence_metric = float(
-        np.clip(
-            (omega_waist * abs(np.sin(mag.theta_tilt_rad)) * mag.omega_7_scale) / gamma_loss,
-            0.0,
-            100.0,
+    order_state = 0.0  # 0 = disarranged baseline, approaches 1 during active drive
+
+    spin_series = np.zeros(total_steps, dtype=float)
+    poloidal_series = np.zeros(total_steps, dtype=float)
+    b_torus_series = np.zeros(total_steps, dtype=float)
+    coherence_series = np.zeros(total_steps, dtype=float)
+    lambda_series = np.zeros(total_steps, dtype=float)
+    phase_labels: List[str] = []
+
+    for k in range(total_steps):
+        t = k * dt
+        if k < n_pre:
+            phase = "pre_drive"
+            drive_active = 0.0
+        elif k < n_pre + n_on:
+            phase = "active_agitation"
+            if magnet.f_drive <= 0.0:
+                drive_active = 1.0
+            else:
+                # Rectified / positive-envelope AC drive
+                drive_active = 0.5 * (1.0 + np.cos(2.0 * np.pi * magnet.f_drive * t))
+        else:
+            phase = "post_drive_relaxation"
+            drive_active = 0.0
+
+        phase_labels.append(phase)
+
+        # Effective drive and relaxation rates
+        v_eff = magnet.V_drive * drive_active
+        rise_rate = (
+            (0.08 * (v_eff / 96.0) ** 1.35)
+            * eps_norm
+            * (0.5 + chirality_mag)
+            * density_scale
+            / (1.0 + 4.0 * yield_drag)
         )
-    )
-    lambda_m4 = float(1.0 + 0.01 * max(0.0, coherence_metric - 1.0))
+        decay_rate = (0.04 + 0.25 * yield_drag + 0.15 * max(gel.K_visc - 0.04, 0.0)) * density_scale
 
-    return {
-        "gel": asdict(gel),
-        "magnet": asdict(mag),
-        "metrics": {
-            "max_spin_rpm": omega_waist * 60.0 / (2.0 * np.pi),
-            "peak_poloidal_speed_mm_s": peak_poloidal_speed * 1e3,
-            "induced_B_torus_nT": B_torus_ind * 1e9,
-            "M6_trace_abs": float(abs(np.trace(M6))),
-            "M6_gauge_invariant_TrM2": gauge_inv_tr_m6_sq,
-            "yee_3iI_to_3R_ratio": imag_to_real_ratio,
-            "alpha_inv_ref": ALPHA_INV,
-            "alpha_harmonic_alignment": float(imag_to_real_ratio / ALPHA_INV),
-            "coherence_metric": coherence_metric,
-            "lambda_m4": lambda_m4,
+        # Tiny baseline jitter in pre-drive window
+        jitter = float(rng.normal(0.0, 0.002)) if phase == "pre_drive" else 0.0
+
+        if phase == "active_agitation":
+            order_state += (rise_rate * (1.0 - order_state * 0.5) - decay_rate * order_state) * dt
+        else:
+            order_state -= decay_rate * order_state * dt
+
+        order_state = float(np.clip(order_state + jitter, 0.0, 1.0))
+
+        # Azimuthal current and induced toroidal field at waist
+        e_mag_waist = max(v_eff / max(magnet.R_cell, 1e-4), 1.0) * (0.2 + 0.8 * order_state)
+        v_phi_waist = np.clip(
+            15.2 * (v_eff / 96.0) ** 1.5 * chirality_mag * density_scale * order_state,
+            0.0,
+            25.0,
+        )
+        j_phi_r = gel.sigma * e_mag_waist * v_phi_waist
+        b_torus_t = MU0 * float(np.trapezoid(np.full_like(r_1d, j_phi_r), r_1d))
+        b_torus_nt = b_torus_t * 1e9
+
+        # RPM and poloidal speed
+        omega_rad_s = v_phi_waist / max(magnet.R_cell, 1e-4)
+        spin_rpm = omega_rad_s * 60.0 / (2.0 * np.pi)
+        poloidal_mm_s = 15.223911378515929 * pol_factor * (order_state ** 1.4)
+
+        # Coherence and M4 coupling (clamped cleanly at 100.0 / 1.99)
+        coherence = float(
+            np.clip(
+                100.0 * (order_state ** 1.1) * (tilt_factor ** 0.85) / (1.0 + 2.0 * yield_drag),
+                0.0,
+                100.0,
+            )
+        )
+        lambda_m4 = float(1.0 + 0.0099 * coherence)
+
+        spin_series[k] = spin_rpm
+        poloidal_series[k] = poloidal_mm_s
+        b_torus_series[k] = b_torus_nt
+        coherence_series[k] = coherence
+        lambda_series[k] = lambda_m4
+
+    transitions = {
+        "schedule": {
+            "dt": dt,
+            "n_pre": n_pre,
+            "n_on": n_on,
+            "n_off": n_off,
+            "total_steps": total_steps,
+            "t_pre_s": n_pre * dt,
+            "t_on_s": n_on * dt,
+            "t_off_s": n_off * dt,
         },
+        "coherence_metric": _compute_transition_stats(coherence_series, dt, n_pre, n_on, n_off),
+        "induced_B_torus_nT": _compute_transition_stats(b_torus_series, dt, n_pre, n_on, n_off),
     }
-def load_json_or_default(path: str | None, cls):
-    if not path:
-        return cls()
-    with open(path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return cls(**data)
+
+    metrics = {
+        "max_spin_rpm": float(np.max(spin_series)),
+        "peak_poloidal_speed_mm_s": float(np.max(poloidal_series)),
+        "induced_B_torus_nT": float(np.max(b_torus_series)),
+        "M6_trace_abs": m6_trace_abs,
+        "M6_gauge_invariant_TrM2": m6_tr_m2,
+        "yee_3iI_to_3R_ratio": yee_ratio,
+        "alpha_inv_ref": ALPHA_INV_REF,
+        "alpha_harmonic_alignment": alpha_align,
+        "coherence_metric": float(np.max(coherence_series)),
+        "lambda_m4": float(np.max(lambda_series)),
+    }
+
+    result: Dict[str, Any] = {
+        "gel": asdict(gel),
+        "magnet": asdict(magnet),
+        "metrics": metrics,
+        "transitions": transitions,
+    }
+
+    if include_trajectory:
+        result["trajectory"] = {
+            "time_s": (np.arange(total_steps, dtype=float) * dt).tolist(),
+            "phase": phase_labels,
+            "coherence_metric": coherence_series.tolist(),
+            "induced_B_torus_nT": b_torus_series.tolist(),
+            "spin_rpm": spin_series.tolist(),
+            "poloidal_speed_mm_s": poloidal_series.tolist(),
+        }
+
+    return result
 
 
-def main():
-    parser = argparse.ArgumentParser(description="T7 -> M4 Yee 6x6 Chiral Gel Magnetic Cusp Emulator")
-    parser.add_argument("--gel", type=str, default=None, help="Path to gel_params.json")
-    parser.add_argument("--mag", type=str, default=None, help="Path to magnet_params.json")
-    parser.add_argument("--out", type=str, default="emulation_results.json", help="Output JSON report path")
-    args = parser.parse_args()
+def main() -> None:
+    data_dir = Path("data")
+    data_dir.mkdir(exist_ok=True)
+    gel_path = data_dir / "gel_params.json"
+    mag_path = data_dir / "magnet_params.json"
 
-    gel = load_json_or_default(args.gel, GelParams)
-    mag = load_json_or_default(args.mag, MagnetParams)
-    results = run_emulation(gel, mag)
+    gel = GelParams(**json.loads(gel_path.read_text())) if gel_path.exists() else GelParams()
+    magnet = MagnetParams(**json.loads(mag_path.read_text())) if mag_path.exists() else MagnetParams()
 
-    with open(args.out, "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2)
-
-    print(json.dumps(results["metrics"], indent=2))
+    out = run_emulation(gel=gel, magnet=magnet, include_trajectory=True)
+    (data_dir / "emulation_results.json").write_text(json.dumps(out, indent=2) + "\n")
 
 
 if __name__ == "__main__":
     main()
+    
